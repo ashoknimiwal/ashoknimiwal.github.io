@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashok Kumar</title>
+    <title>Your Name - Personal Website</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </head>
 <body>
     <header>
+        <h1>Your Name</h1>
         <nav>
             <ul>
                 <li><a href="#about">About Me</a></li>
@@ -24,13 +25,21 @@
 
     <main>
         <section id="about">
-            <h1>About Me</h1>
-            <p>I am Ashok Kumar, a PhD candidate at the Telfer School of Management, University of Ottawa, specializing in Digital Transformation and Innovation. I received my B.Tech (Hons.) in Manufacturing Science and Engineering and my M.Tech in Industrial Engineering and Management, both in 2022. My current research interests explore the intersection of finance and natural language processing, where I leverage neural networks to analyze large-scale textual data.</p>
-            <div class="social-links">
-                <!-- <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank"><i class="fab fa-google"></i> Google Scholar</a> -->
-                <a href="https://github.com/ashoknimiwal" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://in.linkedin.com/in/ashok-kumar-81b450197" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://x.com/nimiwal_ashok" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+            <div class="profile-container">
+                <img src="images/profile.jpg" alt="Your Name" class="profile-pic" id="profilePic">
+                <div class="profile-popup" id="profilePopup">
+                    <img src="images/profile-large.jpg" alt="Your Name" class="profile-pic-large">
+                </div>
+            </div>
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>Welcome to my personal website! I'm [Your Name], a [Your Profession/Field] passionate about [Your Interests].</p>
+                <div class="social-links">
+                    <!-- <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank"><i class="fab fa-google"></i> Google Scholar</a> -->
+                    <a href="https://github.com/YOUR_USERNAME" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://www.linkedin.com/in/YOUR_USERNAME" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://twitter.com/YOUR_USERNAME" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+                </div>
             </div>
         </section>
 
@@ -45,40 +54,49 @@
 
         <section id="publications">
             <h2>Publications</h2>
-            <ul>
-                <li>[Authors]. (Year). [Title]. [Journal], [Volume](Issue), [Pages]. <a href="#">[DOI]</a></li>
-                <li>[Authors]. (Year). [Title]. [Journal], [Volume](Issue), [Pages]. <a href="#">[DOI]</a></li>
-                <li>[Authors]. (Year). [Title]. [Journal], [Volume](Issue), [Pages]. <a href="#">[DOI]</a></li>
-            </ul>
+            <div class="publication">
+                <h3>[Paper Title]</h3>
+                <p class="authors">[Authors]</p>
+                <p class="journal">[Journal], [Volume](Issue), [Pages]</p>
+                <a href="#" class="doi-link">[DOI]</a>
+                <button class="abstract-toggle">More</button>
+                <div class="abstract">
+                    <p>[Abstract text goes here]</p>
+                </div>
+            </div>
+            <!-- Repeat the above structure for each publication -->
         </section>
 
         <section id="talks">
             <h2>Talks/Workshops</h2>
-            <ul>
-                <li>[Date] - [Talk/Workshop Title], [Event Name], [Location]</li>
-                <li>[Date] - [Talk/Workshop Title], [Event Name], [Location]</li>
-                <li>[Date] - [Talk/Workshop Title], [Event Name], [Location]</li>
-            </ul>
+            <div class="talk">
+                <h3>[Talk/Workshop Title]</h3>
+                <p>[Date] - [Event Name], [Location]</p>
+                <div class="talk-buttons">
+                    <a href="#" class="button">Code</a>
+                    <a href="#" class="button">Slides</a>
+                    <a href="#" class="button">Video</a>
+                </div>
+            </div>
+            <!-- Repeat the above structure for each talk/workshop -->
         </section>
 
         <section id="projects">
             <h2>Projects</h2>
             <div class="project-grid">
                 <div class="project-card">
+                    <img src="images/projects/project1.jpg" alt="Project 1">
                     <h3>[Project Name 1]</h3>
                     <p>[Brief description of the project]</p>
                     <a href="#">Learn More</a>
                 </div>
                 <div class="project-card">
+                    <img src="images/projects/project2.jpg" alt="Project 2">
                     <h3>[Project Name 2]</h3>
                     <p>[Brief description of the project]</p>
                     <a href="#">Learn More</a>
                 </div>
-                <div class="project-card">
-                    <h3>[Project Name 3]</h3>
-                    <p>[Brief description of the project]</p>
-                    <a href="#">Learn More</a>
-                </div>
+                <!-- Add more project cards as needed -->
             </div>
         </section>
 
@@ -107,7 +125,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Ashok Kumar. All rights reserved.</p>
+        <p>&copy; 2024 [Your Name]. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
