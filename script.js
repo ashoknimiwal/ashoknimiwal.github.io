@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function loadBlogPosts() {
     try {
-        const response = await fetch('/api/blog-posts');
+        const response = await fetch('http://localhost:5000/api/blog-posts');
         const blogPosts = await response.json();
         const blogGrid = document.querySelector('.blog-grid');
 

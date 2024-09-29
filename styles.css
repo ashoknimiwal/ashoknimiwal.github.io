@@ -1,26 +1,24 @@
 :root {
-    --primary-color: #4285F4;
-    --secondary-color: #34A853;
-    --tertiary-color: #FBBC05;
-    --quaternary-color: #EA4335;
-    --background-color: #f9f9f9;
-    --text-color: #333;
-    --button-color: #8a7d9c; /* Soothing purple-grey */
-    --button-hover-color: #746989;
-    --underline-color: #006400; /* Deep green */
-    --nav-color: #555; /* Deep grey */
+    --maroon: #800000;
+    --maroon: #007bff;
+    --navy-blue: #1d3f58;
+    --dark-grey: #333333;
+    --light-grey: #f0f0f0;
+    --white: #ffffff;
+    --bright-blue: #007bff;
 }
 
 body {
     font-family: 'Roboto', Arial, sans-serif;
     line-height: 1.6;
-    color: var(--text-color);
+    color: var(--dark-grey);
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background-color: var(--background-color);
+    background-color: var(--white);
 }
 
+/* Header and Navigation Styles */
 header {
     display: flex;
     justify-content: space-between;
@@ -29,28 +27,7 @@ header {
     margin-bottom: 2rem;
 }
 
-/* Home link styles */
-#home-link {
-    color: var(--nav-color);
-    text-decoration: none;
-    position: relative;
-}
-
-#home-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--underline-color);
-    transition: width 0.3s ease;
-}
-
-#home-link:hover::after {
-    width: 100%;
-}
-
+/* Nav bar container */
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -58,52 +35,85 @@ nav ul {
     justify-content: flex-end;
 }
 
+/* Nav bar list item styling */
 nav ul li {
     margin-left: 1rem;
 }
 
-/* Updated navigation styles */
+/* Nav bar link styling */
 nav ul li a {
-    color: var(--nav-color);
+    color: var(--navy-blue);
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     position: relative;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions for color, pop effect, and shadow */
 }
-/* nav ul li a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-} */
 
-/* nav ul li a:hover {
-    color: var(--secondary-color);
-} */
-
+/* Underline effect */
 nav ul li a::after {
     content: '';
     position: absolute;
     width: 0;
-    height: 2px;
+    height: 3px;
     bottom: -5px;
     left: 0;
-    background-color: var(--underline-color);
+    background-color: var(--maroon);
     transition: width 0.3s ease;
 }
 
-nav ul li a:hover::after {
-    width: 100%;
+/* Hover effect for link */
+nav ul li a:hover {
+    color: var(--bright-blue); /* Changes to bright blue */
+    transform: scale(1.3); /* Pop-up effect */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); Adds subtle shadow effect */
 }
 
+/* Underline expansion on hover */
+nav ul li a:hover::after {
+    width: 100%; /* Full-width underline */
+}
+
+/* Home Link Styles */
+#home-link {
+    color: var(--navy-blue);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions for color and pop effect*/
+}
+
+/* Underline effect */
+#home-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--maroon); /* Underline color */
+    transition: width 0.3s ease; /* Smooth width animation */
+}
+
+/* Hover effect for home link */
+#home-link:hover {
+    color: var(--bright-blue); /* Changes to bright blue on hover */
+    transform: scale(1.2); /* Pop-up effect on hover */
+}
+
+/* Underline expansion on hover */
+#home-link:hover::after {
+    width: 100%; /* Full-width underline on hover */
+}
+
+/* Section Styles */
 section {
     margin-bottom: 2rem;
     padding: 1rem;
-    background-color: white;
+    background-color: var(--white);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* About Me Section Styles */
 #about {
     display: flex;
     align-items: flex-start;
@@ -124,75 +134,119 @@ section {
     animation: popOut 2s ease-out;
 }
 
-/* Updated profile picture animation */
 @keyframes popOut {
     0% { transform: scale(0); opacity: 0; }
     70% { transform: scale(1.1); opacity: 0.7; }
     100% { transform: scale(1); opacity: 1; }
 }
 
-.profile-pic:hover {
-    transform: scale(1.1);
-}
-
 .about-content {
     flex: 1;
 }
 
+/* Social Links Container */
 .social-links {
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
 }
 
+/* Social Links Styling */
 .social-links a {
+    color: var(--bright-blue);
+    text-decoration: none;
+    font-size: 1.75rem;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions for hover effects */
+}
+
+/* Underline effect */
+.social-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--maroon); /* Underline color */
+    transition: width 0.3s ease; /* Smooth width animation */
+}
+
+/* Hover effect for social links */
+.social-links a:hover {
+    transform: scale(1.1); /* Pop-up effect on hover */
+}
+
+/* Underline expansion on hover */
+.social-links a:hover::after {
+    width: 100%; /* Full-width underline on hover */
+}
+
+/* Publication Styles */
+.publication {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--light-grey);
+}
+
+.publication h3 {
+    color: var(--navy-blue);
+}
+
+.abstract {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--light-grey);
+    border-radius: 5px;
+}
+
+/* Button Styles */
+.btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--primary-color);
+    background-color: var(--navy-blue);
+    color: var(--white);
     text-decoration: none;
-    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
 }
 
-.social-links a:hover {
-    color: var(--secondary-color);
+.btn:hover {
+    background-color: var(--maroon);
+    transform: translateY(-2px);
 }
 
-
-/* Project card hover effect */
-.project-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-10px) rotate(2deg);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
+/* Project Grid Styles */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Creates two equal-width columns */
-    gap: 1rem; /* Gap between tiles */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
 }
 
-/* .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-} */
-
-/* .project-card {
-    background-color: white;
+.project-card {
+    display: block;
+    background-color: var(--white);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-} */
+    text-decoration: none;
+    color: var(--dark-grey);
+    height: 400px;
+}
 
-/* .project-card:hover {
-    transform: translateY(-5px);
+.project-card:hover {
+    transform: translateY(-5px) scale(1.02);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-} */
+}
 
 .project-card img {
     width: 100%;
@@ -204,109 +258,20 @@ section {
     padding: 0 1rem;
 }
 
-.publication {
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #ddd;
-}
-
-.publication h3 {
-    margin-bottom: 0.5rem;
-}
-
-.publication .authors,
-.publication .journal {
-    margin: 0.25rem 0;
-}
-
-.abstract {
-    display: none;
+.project-card h3 {
+    color: var(--navy-blue);
     margin-top: 1rem;
-    padding: 1rem;
-    background-color: #f0f0f0;
-    border-radius: 5px;
 }
 
-.talk {
-    margin-bottom: 1rem;
-}
-
-
-/* Updated button styles */
-.btn {
-    background-color: var(--button-color);
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    font-size: 0.9rem;
-    margin-right: 0.5rem;
-    margin-top: 0.5rem;
-    position: relative;
-}
-
-.btn:hover {
-    background-color: var(--button-hover-color);
-    transform: translateY(-2px);
-}
-
-.btn::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--underline-color);
-    transition: width 0.3s ease;
-}
-
-.btn:hover::after {
-    width: 100%;
-}
-
-/* .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background-color: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    font-size: 0.9rem;
-    margin-right: 0.5rem;
-    margin-top: 0.5rem;
-}
-
-.btn:hover {
-    background-color: var(--secondary-color);
-    transform: translateY(-2px);
-}
-
-.btn-doi { background-color: var(--primary-color); }
-.btn-abstract { background-color: var(--secondary-color); }
-.btn-pdf { background-color: var(--tertiary-color); }
-.btn-code { background-color: var(--quaternary-color); }
-.btn-slides { background-color: var(--primary-color); }
-.btn-video { background-color: var(--secondary-color); }
-.btn-learn-more { background-color: var(--tertiary-color); } */
-
-/* Blog section styles */
+/* Blog Grid Styles */
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
 }
 
 .blog-card {
-    background-color: white;
+    background-color: var(--white);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -331,22 +296,24 @@ section {
 .blog-card h3 {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
+    color: var(--navy-blue);
 }
 
 .blog-card p {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--dark-grey);
 }
 
+/* Footer Styles */
 footer {
     text-align: center;
     margin-top: 2rem;
     padding: 1rem;
-    background-color: white;
+    background-color: var(--light-grey);
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     #about {
         flex-direction: column;
@@ -365,5 +332,9 @@ footer {
     nav ul li {
         margin-left: 0;
         margin-bottom: 0.5rem;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
     }
 }

@@ -6,8 +6,10 @@
     <title>Your Name - Personal Website</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
+    <!-- Header and Navigation -->
     <header>
         <h1><a href="#" id="home-link">Your Name</a></h1>
         <nav>
@@ -22,6 +24,7 @@
     </header>
 
     <main>
+        <!-- About Me Section -->
         <section id="about">
             <div class="profile-container">
                 <img src="images/profile.jpg" alt="Your Name" class="profile-pic" id="profilePic">
@@ -30,14 +33,14 @@
                 <h2>About Me</h2>
                 <p>Welcome to my personal website! I'm [Your Name], a [Your Profession/Field] passionate about [Your Interests].</p>
                 <div class="social-links">
-                    <!-- <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank"><i class="fab fa-google"></i> Google Scholar</a> -->
-                    <a href="https://github.com/YOUR_USERNAME" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="https://www.linkedin.com/in/YOUR_USERNAME" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://twitter.com/YOUR_USERNAME" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+                    <a href="https://github.com/YOUR_USERNAME" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/YOUR_USERNAME" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/YOUR_USERNAME" target="_blank"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
         </section>
 
+        <!-- News Section -->
         <section id="news">
             <h2>News</h2>
             <ul>
@@ -47,7 +50,7 @@
             </ul>
         </section>
 
-        <!-- Publications section -->
+        <!-- Publications Section -->
         <section id="publications">
             <h2>Publications</h2>
             <div class="publication">
@@ -63,10 +66,10 @@
                     <p>[Abstract text goes here]</p>
                 </div>
             </div>
-            <!-- Repeat the above structure for each publication -->
+            <!-- Add more publications as needed -->
         </section>
 
-        <!-- Talks section -->
+        <!-- Talks Section -->
         <section id="talks">
             <h2>Talks/Workshops</h2>
             <div class="talk">
@@ -78,23 +81,33 @@
                     <a href="#" class="btn btn-video"><i class="fas fa-video"></i> Video</a>
                 </div>
             </div>
+            <!-- Add more talks as needed -->
         </section>
 
-        <!-- Projects section -->
+        <!-- Projects Section -->
         <section id="projects">
             <h2>Projects</h2>
             <div class="project-grid">
-                <div class="project-card">
+                <a href="#" class="project-card">
                     <img src="images/projects/project1.jpg" alt="Project 1">
                     <h3>[Project Name 1]</h3>
                     <p>[Brief description of the project]</p>
-                    <a href="#" class="btn btn-learn-more"><i class="fas fa-info-circle"></i> More info</a>
-                </div>
+                </a>
+                <a href="#" class="project-card">
+                    <img src="images/projects/project2.jpg" alt="Project 2">
+                    <h3>[Project Name 2]</h3>
+                    <p>[Brief description of the project]</p>
+                </a>
+                <a href="#" class="project-card">
+                    <img src="images/projects/project3.jpg" alt="Project 3">
+                    <h3>[Project Name 3]</h3>
+                    <p>[Brief description of the project]</p>
+                </a>
                 <!-- Add more project cards as needed -->
             </div>
         </section>
 
-        <!-- New Blog section -->
+        <!-- Blog Section -->
         <section id="blog">
             <h2>Blog</h2>
             <div class="blog-grid">
