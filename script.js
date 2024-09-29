@@ -42,28 +42,51 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Load blog posts
-    loadBlogPosts();
+    // Load projects and blog posts
+    loadProjectsAndBlogPosts();
 });
 
-async function loadBlogPosts() {
+async function loadProjectsAndBlogPosts() {
     try {
-        const response = await fetch('http://localhost:5000/api/blog-posts');
-        const blogPosts = await response.json();
-        const blogGrid = document.querySelector('.blog-grid');
+        const response = await fetch('static-data.json');
+        const data = await response.json();
+        
+        const projectGrid = document.querySelector('.project-grid');
+        data.projects.forEach(project => {
+            const projectCard = createProjectCard(project);
+            projectGrid.appendChild(projectCard);
+        });
 
-        blogPosts.forEach(post => {
+        const blogGrid = document.querySelector('.blog-grid');
+        data.blogPosts.forEach(post => {
             const blogCard = createBlogCard(post);
             blogGrid.appendChild(blogCard);
         });
     } catch (error) {
-        console.error('Error loading blog posts:', error);
+        console.error('Error loading data:', error);
     }
 }
 
+function createProjectCard(project) {
+    const card = document.createElement('a');
+    card.className = 'project-card';
+    card.href = project.link;
+    card.target = '_blank';
+    card.rel = 'noopener noreferrer';
+    card.innerHTML = `
+        <img src="${project.image}" alt="${project.title}">
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+    `;
+    return card;
+}
+
 function createBlogCard(post) {
-    const card = document.createElement('div');
+    const card = document.createElement('a');
     card.className = 'blog-card';
+    card.href = post.link;
+    card.target = '_blank';
+    card.rel = 'noopener noreferrer';
     card.innerHTML = `
         <img src="${post.image}" alt="${post.title}">
         <h3>${post.title}</h3>
