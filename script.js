@@ -49,9 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function loadAllSections() {
     try {
-        const sections = ['publications', 'talks', 'projects', 'blogPosts'];
+        const sections = ['news', 'publications', 'talks', 'projects', 'blogPosts'];
         for (const section of sections) {
-            const response = await fetch(`${section}.json`);
+            const response = await fetch(`api/${section}.json`);
             const data = await response.json();
             populateSection(section, data);
         }
@@ -62,16 +62,26 @@ async function loadAllSections() {
 
 function populateSection(section, data) {
     const container = document.getElementById(`${section}-container`);
-    if (!container) return;
+    if (!container) {
+        console.error(`Container not found for section: ${section}`);
+        return;
+    }
+
+    // Clear existing content
+    container.innerHTML = '';
 
     data.forEach(item => {
         const element = createSectionElement(section, item);
-        container.appendChild(element);
+        if (element) {
+            container.appendChild(element);
+        }
     });
 }
 
 function createSectionElement(section, item) {
     switch(section) {
+        case 'news':
+            return createNewsElement(item);
         case 'publications':
             return createPublicationElement(item);
         case 'talks':
@@ -85,11 +95,24 @@ function createSectionElement(section, item) {
     }
 }
 
+function createNewsElement(newsItem) {
+    const li = document.createElement('li');
+    li.innerHTML = `<strong>${newsItem.date}</strong> - ${parseNewsContent(newsItem.content)}`;
+    return li;
+}
+
+function parseNewsContent(content) {
+    return content.replace(/<([^>]+)>/g, (match, p1) => {
+        const [text, url] = p1.split('|');
+        return `<a href="${url}" target="_blank">${text}</a>`;
+    });
+}
+
 function createPublicationElement(publication) {
     const element = document.createElement('div');
     element.className = 'publication';
     element.innerHTML = `
-        <h3>${publication.title}</h3>
+        <h4>${publication.title}</h4>
         <p class="authors">${publication.authors}</p>
         <p class="journal">${publication.journal}</p>
         <div class="pub-buttons">
@@ -112,7 +135,7 @@ function createTalkElement(talk) {
     const element = document.createElement('div');
     element.className = 'talk';
     element.innerHTML = `
-        <h3>${talk.title}</h3>
+        <h4>${talk.title}</h4>
         <p>${talk.date} - ${talk.event}, ${talk.location}</p>
         <div class="talk-buttons">
             <a href="${talk.code}" class="btn btn-code" target="_blank"><i class="fas fa-code"></i> Code</a>

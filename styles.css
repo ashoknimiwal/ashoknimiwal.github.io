@@ -192,15 +192,46 @@ section {
     width: 100%; /* Full-width underline on hover */
 }
 
+
 /* Publication Styles */
 .publication {
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
     padding-bottom: 1rem;
-    border-bottom: 1.5px solid var(--light-grey);
+    /* border-bottom: 1.5px solid var(--light-grey); */
 }
 
-.publication h3 {
-    color: var(--navy-blue);
+.publication h4 {
+    font-size: 1rem;
+    margin-bottom: 0.2rem; /* Reduced space below title */
+    line-height: 1; /* Adjust line-height for compactness */
+}
+
+.publication .authors, .publication .journal {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.2rem; /* Reduced space between authors and journal */
+    line-height: 0.77; /* Reduced line-height for compactness */
+}
+
+.publication .pub-buttons {
+    margin-top: 0.5rem; /* Reduced space above buttons */
+    display: flex;
+    gap: 0.5rem; /* Adjusted spacing between buttons */
+}
+
+.publication .btn {
+    padding: 0.2rem 0.7rem; /* Reduced button padding */
+    font-size: 0.8rem; /* Smaller button text size */
+}
+
+.publication .abstract {
+    margin-top: 0.4rem; /* Reduced space above abstract */
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.publication .abstract p {
+    margin: 0; /* Remove margins inside the abstract text */
 }
 
 .abstract {
@@ -210,6 +241,37 @@ section {
     background-color: var(--light-grey);
     border-radius: 5px;
 }
+
+
+.talk {
+    margin-bottom: 0rem;
+    padding-bottom: 1rem;
+    /* border-bottom: 1.5px solid var(--light-grey); */
+}
+.talk h4 {
+    font-size: 1rem;
+    margin-bottom: 0rem; /* Reduced space below the title */
+    line-height: 1; /* Compact line-height */
+}
+
+.talk p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.2rem; /* Reduced space between date/event/location */
+    line-height: 1.2; /* Compact line-height */
+}
+
+.talk .talk-buttons {
+    margin-top: 0.5rem; /* Reduced space above buttons */
+    display: flex;
+    gap: 0.5rem; /* Adjusted spacing between buttons */
+}
+
+.talk .btn {
+    padding: 0.2rem 0.7rem; /* Reduced button padding */
+    font-size: 0.8rem; /* Smaller button text size */
+}
+
 
 /* Updated Button Styles */
 .btn {
@@ -322,6 +384,32 @@ section {
 }
 
 
+/* News Section Styles */
+#news ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Remove default margin */
+}
+
+#news li {
+    margin-bottom: 0.5rem; /* Reduced from 1rem */
+    line-height: 1.4; /* Slightly reduced line height */
+}
+
+#news li strong {
+    color: var(--navy-blue);
+}
+
+#news li a {
+    color: var(--maroon);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#news li a:hover {
+    color: var(--bright-blue);
+    text-decoration: underline;
+}
 
 /* Footer Styles */
 footer {
@@ -357,3 +445,55 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+footer {
+    background-color: transparent; /* Removed the background shade */
+    padding: 0.5rem 0; /* Compact padding */
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Changed font to Roboto */
+}
+
+.footer-content {
+    max-width: 500px; /* Adjusted width */
+    margin: 0 auto;
+}
+
+.footer-signature p {
+    font-size: 0.85rem; /* Smaller font size */
+    color: #666;
+    margin-bottom: 0.25rem; /* Reduced margin for compactness */
+}
+
+footer .code-tag {
+    font-family: monospace;
+    font-weight: 2000; /* Extra bold for code brackets */
+}
+
+.heart {
+    color: #888; /* Greyish heart icon instead of red */
+}
+
+.footer-signature .bold {
+    font-weight: 900; /* Extra bold for name */
+}
+
+.footer-signature .normal {
+    font-weight: 400; /* Normal (non-bold) for 'with' and 'by' */
+}
+
+.social-icons {
+    margin-top: 0.25rem; /* Reduced top margin */
+}
+
+.social-icons a {
+    color: #666;
+    font-size: 1rem; /* Smaller icon size */
+    margin: 0 0.3rem; /* Adjusted icon spacing */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #333;
+}
+

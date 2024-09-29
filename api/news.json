@@ -1,0 +1,14 @@
+[
+    {
+        "date": "Sep 2024",
+        "content": "This is news item 1. Check it out here: <link|https://example.com/news1>."
+    },
+    {
+        "date": "Aug 2024",
+        "content": "This is news item 2. Read more here: <link|https://example.com/news2>."
+    },
+    {
+        "date": "Jul 2024",
+        "content": "This is news item 3. Learn more here: <link|https://example.com/news3>."
+    }
+]

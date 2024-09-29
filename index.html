@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal Website</title>
+    <title>Ashok Kumar</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="images/icon-3.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/icon-3.png" type="image/x-icon">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <!-- Header and Navigation -->
     <header>
-        <h1><a href="#" id="home-link">Your Name</a></h1>
+        <h2><a href="#" id="home-link">Ashok Kumar</a></h2>
         <nav>
             <ul>
                 <li><a href="#news">News</a></li>
@@ -43,10 +46,8 @@
         <!-- News Section -->
         <section id="news">
             <h2>News</h2>
-            <ul>
-                <li><strong>[Date]</strong> - [News item 1]</li>
-                <li><strong>[Date]</strong> - [News item 2]</li>
-                <li><strong>[Date]</strong> - [News item 3]</li>
+            <ul id="news-container">
+                <!-- News items will be dynamically added here -->
             </ul>
         </section>
 
@@ -84,8 +85,24 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 [Your Name]. All rights reserved.</p>
-    </footer>
+        <div class="footer-content">
+            <div class="footer-signature">
+                <p>
+                    <span class="code-tag">&lt;/&gt;</span> 
+                    <span class="normal">with</span> 
+                    <span class="heart">❤️</span> 
+                    <span class="normal">by</span> 
+                    <span class="bold">Ashok Kumar</span>
+                </p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>    
 
     <script src="script.js"></script>
 </body>
