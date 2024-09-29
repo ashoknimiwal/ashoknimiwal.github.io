@@ -9,16 +9,14 @@
 </head>
 <body>
     <header>
-        <h1>Your Name</h1>
+        <h1><a href="#" id="home-link">Your Name</a></h1>
         <nav>
             <ul>
-                <li><a href="#about">About Me</a></li>
                 <li><a href="#news">News</a></li>
                 <li><a href="#publications">Publications</a></li>
-                <li><a href="#talks">Talks/Workshops</a></li>
+                <li><a href="#talks">Talks</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#services">Services and Awards</a></li>
-                <li><a href="#fun-facts">Fun Facts</a></li>
+                <li><a href="#blog">Blog</a></li>
             </ul>
         </nav>
     </header>
@@ -27,9 +25,6 @@
         <section id="about">
             <div class="profile-container">
                 <img src="images/profile.jpg" alt="Your Name" class="profile-pic" id="profilePic">
-                <div class="profile-popup" id="profilePopup">
-                    <img src="images/profile-large.jpg" alt="Your Name" class="profile-pic-large">
-                </div>
             </div>
             <div class="about-content">
                 <h2>About Me</h2>
@@ -46,20 +41,24 @@
         <section id="news">
             <h2>News</h2>
             <ul>
-                <li>[Date] - [News item 1]</li>
-                <li>[Date] - [News item 2]</li>
-                <li>[Date] - [News item 3]</li>
+                <li><strong>[Date]</strong> - [News item 1]</li>
+                <li><strong>[Date]</strong> - [News item 2]</li>
+                <li><strong>[Date]</strong> - [News item 3]</li>
             </ul>
         </section>
 
+        <!-- Publications section -->
         <section id="publications">
             <h2>Publications</h2>
             <div class="publication">
                 <h3>[Paper Title]</h3>
                 <p class="authors">[Authors]</p>
                 <p class="journal">[Journal], [Volume](Issue), [Pages]</p>
-                <a href="#" class="doi-link">[DOI]</a>
-                <button class="abstract-toggle">More</button>
+                <div class="pub-buttons">
+                    <button class="btn btn-abstract"><i class="fas fa-book-open"></i> Abstract</button>
+                    <a href="#" class="btn btn-doi"><i class="fas fa-link"></i> DOI</a>
+                    <a href="#" class="btn btn-pdf"><i class="fas fa-file-pdf"></i> PDF</a>
+                </div>
                 <div class="abstract">
                     <p>[Abstract text goes here]</p>
                 </div>
@@ -67,20 +66,21 @@
             <!-- Repeat the above structure for each publication -->
         </section>
 
+        <!-- Talks section -->
         <section id="talks">
             <h2>Talks/Workshops</h2>
             <div class="talk">
                 <h3>[Talk/Workshop Title]</h3>
                 <p>[Date] - [Event Name], [Location]</p>
                 <div class="talk-buttons">
-                    <a href="#" class="button">Code</a>
-                    <a href="#" class="button">Slides</a>
-                    <a href="#" class="button">Video</a>
+                    <a href="#" class="btn btn-code"><i class="fas fa-code"></i> Code</a>
+                    <a href="#" class="btn btn-slides"><i class="fas fa-desktop"></i> Slides</a>
+                    <a href="#" class="btn btn-video"><i class="fas fa-video"></i> Video</a>
                 </div>
             </div>
-            <!-- Repeat the above structure for each talk/workshop -->
         </section>
 
+        <!-- Projects section -->
         <section id="projects">
             <h2>Projects</h2>
             <div class="project-grid">
@@ -88,39 +88,18 @@
                     <img src="images/projects/project1.jpg" alt="Project 1">
                     <h3>[Project Name 1]</h3>
                     <p>[Brief description of the project]</p>
-                    <a href="#">Learn More</a>
-                </div>
-                <div class="project-card">
-                    <img src="images/projects/project2.jpg" alt="Project 2">
-                    <h3>[Project Name 2]</h3>
-                    <p>[Brief description of the project]</p>
-                    <a href="#">Learn More</a>
+                    <a href="#" class="btn btn-learn-more"><i class="fas fa-info-circle"></i> More info</a>
                 </div>
                 <!-- Add more project cards as needed -->
             </div>
         </section>
 
-        <section id="services">
-            <h2>Services and Awards</h2>
-            <h3>Academic Services</h3>
-            <ul>
-                <li>Reviewer for [Journal Name]</li>
-                <li>Program Committee Member for [Conference Name]</li>
-            </ul>
-            <h3>Awards</h3>
-            <ul>
-                <li>[Year] - [Award Name], [Awarding Institution]</li>
-                <li>[Year] - [Award Name], [Awarding Institution]</li>
-            </ul>
-        </section>
-
-        <section id="fun-facts">
-            <h2>Fun Facts</h2>
-            <ul>
-                <li>[Interesting fact about yourself]</li>
-                <li>[Hobby or skill you're proud of]</li>
-                <li>[Unusual experience you've had]</li>
-            </ul>
+        <!-- New Blog section -->
+        <section id="blog">
+            <h2>Blog</h2>
+            <div class="blog-grid">
+                <!-- Blog entries will be dynamically added here -->
+            </div>
         </section>
     </main>
 
