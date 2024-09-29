@@ -1,0 +1,20 @@
+[
+    {
+      "title": "Example Talk Title",
+      "date": "Date",
+      "event": "Event Name",
+      "location": "Location",
+      "code": "https://github.com/example/code",
+      "slides": "https://example.com/slides",
+      "video": "https://youtube.com/example"
+    },
+    {
+        "title": "Example Talk Title 2",
+        "date": "Date",
+        "event": "Event Name",
+        "location": "Location",
+        "code": "https://github.com/example/code",
+        "slides": "https://example.com/slides",
+        "video": "https://youtube.com/example"
+      }
+  ]

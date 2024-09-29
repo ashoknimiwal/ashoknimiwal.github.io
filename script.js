@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // ... (keep existing code for profile picture and smooth scrolling) ...
     // Profile picture pop-out effect
     const profilePic = document.getElementById('profilePic');
     profilePic.style.opacity = '0';
@@ -41,30 +42,85 @@ document.addEventListener('DOMContentLoaded', function() {
             behavior: 'smooth'
         });
     });
-
-    // Load projects and blog posts
-    loadProjectsAndBlogPosts();
+    
+    // Load all sections
+    loadAllSections();
 });
 
-async function loadProjectsAndBlogPosts() {
+async function loadAllSections() {
     try {
-        const response = await fetch('static-data.json');
-        const data = await response.json();
-        
-        const projectGrid = document.querySelector('.project-grid');
-        data.projects.forEach(project => {
-            const projectCard = createProjectCard(project);
-            projectGrid.appendChild(projectCard);
-        });
-
-        const blogGrid = document.querySelector('.blog-grid');
-        data.blogPosts.forEach(post => {
-            const blogCard = createBlogCard(post);
-            blogGrid.appendChild(blogCard);
-        });
+        const sections = ['publications', 'talks', 'projects', 'blogPosts'];
+        for (const section of sections) {
+            const response = await fetch(`${section}.json`);
+            const data = await response.json();
+            populateSection(section, data);
+        }
     } catch (error) {
         console.error('Error loading data:', error);
     }
+}
+
+function populateSection(section, data) {
+    const container = document.getElementById(`${section}-container`);
+    if (!container) return;
+
+    data.forEach(item => {
+        const element = createSectionElement(section, item);
+        container.appendChild(element);
+    });
+}
+
+function createSectionElement(section, item) {
+    switch(section) {
+        case 'publications':
+            return createPublicationElement(item);
+        case 'talks':
+            return createTalkElement(item);
+        case 'projects':
+            return createProjectCard(item);
+        case 'blogPosts':
+            return createBlogCard(item);
+        default:
+            return null;
+    }
+}
+
+function createPublicationElement(publication) {
+    const element = document.createElement('div');
+    element.className = 'publication';
+    element.innerHTML = `
+        <h3>${publication.title}</h3>
+        <p class="authors">${publication.authors}</p>
+        <p class="journal">${publication.journal}</p>
+        <div class="pub-buttons">
+            <button class="btn btn-abstract"><i class="fas fa-book-open"></i> Abstract</button>
+            <a href="${publication.doi}" class="btn btn-doi" target="_blank"><i class="fas fa-link"></i> DOI</a>
+            <a href="${publication.pdf}" class="btn btn-pdf" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a>
+        </div>
+        <div class="abstract">
+            <p>${publication.abstract}</p>
+        </div>
+    `;
+    
+    const abstractButton = element.querySelector('.btn-abstract');
+    abstractButton.addEventListener('click', toggleAbstract);
+    
+    return element;
+}
+
+function createTalkElement(talk) {
+    const element = document.createElement('div');
+    element.className = 'talk';
+    element.innerHTML = `
+        <h3>${talk.title}</h3>
+        <p>${talk.date} - ${talk.event}, ${talk.location}</p>
+        <div class="talk-buttons">
+            <a href="${talk.code}" class="btn btn-code" target="_blank"><i class="fas fa-code"></i> Code</a>
+            <a href="${talk.slides}" class="btn btn-slides" target="_blank"><i class="fas fa-desktop"></i> Slides</a>
+            <a href="${talk.video}" class="btn btn-video" target="_blank"><i class="fas fa-video"></i> Video</a>
+        </div>
+    `;
+    return element;
 }
 
 function createProjectCard(project) {
@@ -93,4 +149,15 @@ function createBlogCard(post) {
         <p>${post.excerpt}</p>
     `;
     return card;
+}
+
+function toggleAbstract() {
+    const abstract = this.parentElement.nextElementSibling;
+    if (abstract.style.display === 'none' || abstract.style.display === '') {
+        abstract.style.display = 'block';
+        this.innerHTML = '<i class="fas fa-book"></i> Hide Abstract';
+    } else {
+        abstract.style.display = 'none';
+        this.innerHTML = '<i class="fas fa-book-open"></i> Abstract';
+    }
 }

@@ -1,0 +1,18 @@
+[
+    {
+      "title": "Example Publication Title",
+      "authors": "Author 1, Author 2, Author 3",
+      "journal": "Journal Name, Volume(Issue), Pages",
+      "abstract": "This is an example abstract for the publication.",
+      "doi": "https://doi.org/example",
+      "pdf": "path/to/pdf/file.pdf"
+    },
+    {
+        "title": "Example Publication Title",
+        "authors": "Author 1, Author 2, Author 3",
+        "journal": "Journal Name, Volume(Issue), Pages",
+        "abstract": "This is an example abstract for the publication.",
+        "doi": "https://doi.org/example",
+        "pdf": "path/to/pdf/file.pdf"
+      }
+  ]
