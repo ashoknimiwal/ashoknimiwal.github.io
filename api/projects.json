@@ -1,20 +1,8 @@
 [
     {
-        "title": "Project 1",
-        "description": "Brief description of Project 1",
-        "image": "images/projects/project1.jpg",
-        "link": "https://github.com/yourusername/project1"
-      },
-      {
-        "title": "Project 2",
-        "description": "Brief description of Project 2",
+        "title": "Contextual Thesaurus",
+        "description": "This given contextual synonyms of a list of word from given text.",
         "image": "images/projects/project2.jpg",
-        "link": "https://github.com/yourusername/project2"
-      },
-      {
-        "title": "Project 3",
-        "description": "Brief description of Project 3",
-        "image": "images/projects/project3.jpg",
-        "link": "https://github.com/yourusername/project3"
+        "link": "under_development____code_will_be_made_public_when_completed_or_near_completion"
       }
 ]

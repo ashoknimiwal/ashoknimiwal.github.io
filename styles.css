@@ -132,12 +132,23 @@ section {
 .profile-container {
     position: relative;
     margin-right: 2rem;
+    width: 25%; /* Set to 30% of the section's width */
+}
+
+.profile-pic-container {
+    display: flex;
+    margin-right: 1rem;
+    justify-content: center;  /* Horizontally centers the picture */
+    /* align-items: center;      Vertically centers the picture */
+    width: 30%;               /* Set the width of the container to 30% */
+    /* height: auto;             Adjust height based on the image */
+    margin: 0 auto;           /* Center the container horizontally */
 }
 
 .profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* Makes the image circular */
     object-fit: cover;
     cursor: pointer;
     transition: transform 0.3s ease;

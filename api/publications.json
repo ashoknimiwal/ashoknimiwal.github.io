@@ -1,18 +1,18 @@
 [
     {
-      "title": "Example Publication Title",
-      "authors": "Author 1, Author 2, Author 3",
-      "journal": "Journal Name, Volume(Issue), Pages",
-      "abstract": "This is an example abstract for the publication.",
-      "doi": "https://doi.org/example",
-      "pdf": "path/to/pdf/file.pdf"
+      "title": "Using 10-K text to gauge COVID-related corporate disclosure",
+      "authors": "Dutta, S., Kumar, A., Pant, P., Walsh, C., & Dutta, M.",
+      "journal": "Plos One",
+      "abstract": "During the pandemic era, COVID-related disclosure has become quite critical for shareholders and other market participants to understand the uncertainties and challenges associated with a firm’s operation. However, there is no well-grounded and systematic measure to gauge the intensity of COVID-related disclosure and its plausible impact. Therefore, this study develops and validates various COVID-related disclosure measures. More specifically, using a sample of publicly listed U.S. firms and applying natural language processing (NLP) on 10-K reports, we have developed two types of COVID dictionaries (or COVID-related disclosure measurement tools): (a) overall COVID dictionary (count of all COVID-related words/phrases) and (b) contextual COVID-dictionary (count of COVID related words/phrases preceded or followed by positive, negative tones, or financial constraints words). Subsequently, we have validated both types of COVID dictionaries by investigating their association with corporate liquidity events (e.g., dividend payment, dividend change). We confirm that the overall COVID dictionary effectively predicts a firm’s liquidity event. We find similar results for contextual COVID dictionaries with a negative spin (i.e., COVID disclosures with a negative tone or an indication of financial constraints). Our results further show that better-governed firms (e.g., greater board independence, and more female directors) tend to have more COVID-related disclosures, despite the fact that more COVID-related disclosures suppress a firm’s market-based stock performance (e.g. Tobin’s Q). Our results suggest that better-governed firms prefer greater transparency, even if it may hurt their market performance in the short run.",
+      "doi": "https://doi.org/10.1371/journal.pone.0283138",
+      "pdf": "https://drive.google.com/file/d/1w18QnfPfLXOMVIX1fGeztoGm0OJb7Frv/view?usp=sharing"
     },
     {
-        "title": "Example Publication Title",
-        "authors": "Author 1, Author 2, Author 3",
-        "journal": "Journal Name, Volume(Issue), Pages",
-        "abstract": "This is an example abstract for the publication.",
-        "doi": "https://doi.org/example",
-        "pdf": "path/to/pdf/file.pdf"
+        "title": "Navigating in turbulent times: Using social media to examine small and family-owned business topics and sentiments during the COVID-19 crisis",
+        "authors": "Menezes, S. M., Kumar, A., & Dutta, S.",
+        "journal": "Information Systems Frontiers",
+        "abstract": "This paper has been accepted for publication and is currently awaiting its release. I will update the DOI and full-text PDF links once the publication process is complete.",
+        "doi": "path/to/doi/ISF-paper/---this_will_be_updated_soon!",
+        "pdf": "path/to/pdf/file.pdf/---this_will_be_updated_soon!"
       }
   ]

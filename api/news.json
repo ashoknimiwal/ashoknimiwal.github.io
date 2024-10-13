@@ -1,14 +1,22 @@
 [
     {
         "date": "Sep 2024",
-        "content": "This is news item 1. Check it out here: <link|https://example.com/news1>."
+        "content": "Started the development of a pet project: Contextual thesaurus."
+    },
+    {
+        "date": "Sep 2024",
+        "content": "Assumed responsibility for the Telfer Innovation Club."
     },
     {
         "date": "Aug 2024",
-        "content": "This is news item 2. Read more here: <link|https://example.com/news2>."
+        "content": "Research paper accepted for publication in Information Systems Frontiers."
     },
     {
         "date": "Jul 2024",
-        "content": "This is news item 3. Learn more here: <link|https://example.com/news3>."
+        "content": "Launched a collaborative project with Honda focusing on social listening analysis."
+    },
+    {
+        "date": "Jul 2024",
+        "content": "Served as a reviewer for a research paper submitted to Information Systems Frontiers."
     }
 ]
