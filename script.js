@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function loadAllSections() {
     try {
-        const sections = ['news', 'publications', 'talks', 'projects', 'blogPosts'];
+        const sections = ['news', 'publications', 'talks', 'projects', 'blogPosts', 'miscellaneous'];
         for (const section of sections) {
             const response = await fetch(`api/${section}.json`);
             const data = await response.json();
@@ -90,6 +90,8 @@ function createSectionElement(section, item) {
             return createProjectCard(item);
         case 'blogPosts':
             return createBlogCard(item);
+        case 'miscellaneous':
+            return createMiscellaneousElement(item);
         default:
             return null;
     }
@@ -172,6 +174,19 @@ function createBlogCard(post) {
         <p>${post.excerpt}</p>
     `;
     return card;
+}
+
+function createMiscellaneousElement(item) {
+    const li = document.createElement('li');
+    li.innerHTML = parseMiscellaneousContent(item.content);
+    return li;
+}
+
+function parseMiscellaneousContent(content) {
+    return content.replace(/<([^>]+)>/g, (match, p1) => {
+        const [text, url] = p1.split('|');
+        return `<a href="${url}" target="_blank">${text}</a>`;
+    });
 }
 
 function toggleAbstract() {

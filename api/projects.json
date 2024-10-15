@@ -1,8 +1,8 @@
 [
     {
         "title": "Contextual Thesaurus",
-        "description": "This given contextual synonyms of a list of word from given text.",
+        "description": "Returns context-specific synonyms for a list of user-provided words based on the meaning and usage within a given text.",
         "image": "images/projects/project2.jpg",
-        "link": "under_development____code_will_be_made_public_when_completed_or_near_completion"
+        "link": "https://github.com/ashoknimiwal/contextual-thesaurus"
       }
 ]
