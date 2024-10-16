@@ -316,6 +316,12 @@ section {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Reduced shadow */
 }
 
+.btn.inactive {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
 /* Project Grid Styles */
 .project-grid {
     display: grid;

@@ -118,17 +118,19 @@ function createPublicationElement(publication) {
         <p class="authors">${publication.authors}</p>
         <p class="journal">${publication.journal}</p>
         <div class="pub-buttons">
-            <button class="btn btn-abstract"><i class="fas fa-book-open"></i> Abstract</button>
-            <a href="${publication.doi}" class="btn btn-doi" target="_blank"><i class="fas fa-link"></i> DOI</a>
-            <a href="${publication.pdf}" class="btn btn-pdf" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a>
+            ${createButton('abstract', 'fas fa-book-open', 'Abstract', publication.abstract)}
+            ${createButton('doi', 'fas fa-link', 'DOI', publication.doi)}
+            ${createButton('pdf', 'fas fa-file-pdf', 'PDF', publication.pdf)}
         </div>
         <div class="abstract">
-            <p>${publication.abstract}</p>
+            <p>${publication.abstract || 'Abstract not available.'}</p>
         </div>
     `;
     
     const abstractButton = element.querySelector('.btn-abstract');
-    abstractButton.addEventListener('click', toggleAbstract);
+    if (abstractButton && publication.abstract) {
+        abstractButton.addEventListener('click', toggleAbstract);
+    }
     
     return element;
 }
@@ -140,12 +142,22 @@ function createTalkElement(talk) {
         <h4>${talk.title}</h4>
         <p>${talk.date} - ${talk.event}, ${talk.location}</p>
         <div class="talk-buttons">
-            <a href="${talk.code}" class="btn btn-code" target="_blank"><i class="fas fa-code"></i> Code</a>
-            <a href="${talk.slides}" class="btn btn-slides" target="_blank"><i class="fas fa-desktop"></i> Slides</a>
-            <a href="${talk.video}" class="btn btn-video" target="_blank"><i class="fas fa-video"></i> Video</a>
+            ${createButton('code', 'fas fa-code', 'Code', talk.code)}
+            ${createButton('slides', 'fas fa-desktop', 'Slides', talk.slides)}
+            ${createButton('video', 'fas fa-video', 'Video', talk.video)}
         </div>
     `;
     return element;
+}
+
+function createButton(type, iconClass, text, content) {
+    if (!content) {
+        return `<button class="btn btn-${type} inactive" disabled><i class="${iconClass}"></i> ${text}</button>`;
+    }
+    if (type === 'abstract') {
+        return `<button class="btn btn-${type}"><i class="${iconClass}"></i> ${text}</button>`;
+    }
+    return `<a href="${content}" class="btn btn-${type}" target="_blank"><i class="${iconClass}"></i> ${text}</a>`;
 }
 
 function createProjectCard(project) {
