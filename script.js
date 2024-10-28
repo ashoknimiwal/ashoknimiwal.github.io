@@ -33,6 +33,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Email footer button
+    document.getElementById('email-button').addEventListener('click', function(e) {
+        e.preventDefault();
+        const emailParts = {
+            username: 'ashoknimiwal1998',
+            domain: 'gmail.com'
+        };
+        
+        if (this.querySelector('.email-text')) {
+            // If email is shown, hide it
+            this.innerHTML = '<i class="fas fa-envelope"></i>';
+        } else {
+            // If email is hidden, show it
+            this.innerHTML = `
+                <i class="fas fa-envelope"></i>
+                <span class="email-text">username@${emailParts.domain}; username = ${emailParts.username}</span>
+            `;
+        }
+    });
+
     // Home link scroll to top
     const homeLink = document.getElementById('home-link');
     homeLink.addEventListener('click', function(e) {

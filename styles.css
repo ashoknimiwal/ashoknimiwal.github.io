@@ -521,3 +521,23 @@ footer .code-tag {
     color: #333;
 }
 
+#email-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+#email-button:hover {
+    transform: scale(1.05);
+}
+
+.email-text {
+    font-size: 0.9em;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
