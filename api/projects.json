@@ -1,8 +1,24 @@
 [
     {
         "title": "Contextual Thesaurus",
-        "description": "Returns context-specific synonyms for a list of user-provided words based on the meaning and usage within a given text.",
-        "image": "images/projects/project2.jpg",
-        "link": "https://github.com/ashoknimiwal/contextual-thesaurus"
-      }
+        "description": "A domain-aware synonym engine powered by Word2Vec embeddings trained on financial corpora. Querying \"liquid\" returns cash, assets, solvent — not fluid, watery, wet.",
+        "image": "images/projects/project4.jpg",
+        "link": "https://github.com/ashoknimiwal/contextual-thesaurus",
+        "slug": "contextual-thesaurus",
+        "status": "Work in Progress",
+        "roadmap": [
+            { "text": "Core synonym extraction engine", "done": true },
+            { "text": "Domain-specific Word2Vec training", "done": true },
+            { "text": "REST API with FastAPI + Uvicorn", "done": true },
+            { "text": "Interactive visualisation", "done": true },
+            { "text": "Local end-to-end testing", "done": true },
+            { "text": "Deployment 🚀", "done": false },
+            { "text": "Evaluation benchmarks (time permitting)", "done": false }
+        ],
+        "resources": {
+            "github": "https://github.com/ashoknimiwal/contextual-thesaurus",
+            "demo": null,
+            "paper": null
+        }
+    }
 ]

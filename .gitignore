@@ -1,5 +1,5 @@
 #### One time-special cases ###
-notes.md
+*notes.md
 scriptbackup.js
 icon.webp
 icon-2.webp
@@ -102,6 +102,9 @@ target/
 
 # Exclude trained models
 /models/
+
+# Exclude imagebin folder
+/images/imagebin/
 
 # exclude data from source control by default
 # /data/

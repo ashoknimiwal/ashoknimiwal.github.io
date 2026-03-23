@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contextual Thesaurus — Ashok Kumar</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="../images/icons/icon-6.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../font.css">
+</head>
+<body>
+    <div class="project-page">
+        <a href="../index.html#projects" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Projects
+        </a>
+
+        <h1>Contextual Thesaurus</h1>
+
+        <div class="project-status">
+            <span class="status-dot wip"></span>
+            Work in Progress
+        </div>
+
+        <div class="project-description">
+            <p>
+                A domain-aware synonym engine built on custom Word2Vec embeddings. Rather than returning
+                generic dictionary synonyms, it learns how language is actually used within a specific
+                domain — so querying <em>"liquid"</em> in a financial context returns
+                <em>cash, assets, solvent</em>, not <em>fluid, watery, wet</em>.
+            </p>
+        </div>
+
+        <!-- The Problem -->
+        <div class="project-section">
+            <h2>The Problem: Context Changes Everything</h2>
+            <p class="section-text">
+                <a href="https://www.thesaurus.com/" target="_blank" rel="noopener noreferrer">Thesaurus</a> is a general-purpose digital dictionary.
+                Its synonyms reflect average language use, which can misleads meaning of domain specific words.
+                The same word can mean entirely different things depending on where it appears:
+            </p>
+
+            <div class="comparison-table-wrap">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Word</th>
+                            <th>Generic synonyms</th>
+                            <th>Financial synonyms</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>liquid</td>
+                            <td>fluid · watery · wet</td>
+                            <td>cash · assets · solvent</td>
+                        </tr>
+                        <tr>
+                            <td>yield</td>
+                            <td>produce · harvest · give</td>
+                            <td>return · dividend · coupon</td>
+                        </tr>
+                        <tr>
+                            <td>spread</td>
+                            <td>butter · paste · smear</td>
+                            <td>bid-ask · margin · credit</td>
+                        </tr>
+                        <tr>
+                            <td>volume</td>
+                            <td>sound · loud · noise</td>
+                            <td>trades · shares · turnover</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="section-text">
+                The problem compounds further with specialist vocabulary. Terms like
+                <em>EBITDA, repo rate, delta-hedging,</em> and <em>NAV</em> appear too
+                infrequently in general corpora for any model to learn meaningful representations,
+                leaving them with near-random vectors, and confidently wrong neighbours. 
+                Compounding this further, multi-word expressions such as <em>repo rate, 
+                quantitative easing,</em> and <em>net asset value</em> are rarely treated 
+                as single semantic units; yet in finance, their meaning is inseparable 
+                from their combination. Splitting them into unigrams strips away precisely 
+                the context that makes them meaningful, underscoring the need for 
+                domain-aware phrase detection before any embedding is learned.
+            </p>
+            <aside class="section-text">
+                💡 <strong>Quick note:</strong> About the multi word expressions: the good news is that identifying these 
+                multi-word expressions does not have to be a manual headache. You can do 
+                it automatically before training even begins, by scanning the corpus 
+                for word pairs (or triplets) that co-occur together far more often than 
+                you would expect by chance. If <em>repo</em> and <em>rate</em> almost 
+                always show up side by side, that is a strong statistical signal that they 
+                belong together. Once identified, you simply join them with an underscore, 
+                turning <em>repo rate</em> into <em>repo_rate</em>, and feed that 
+                pre-processed text into word2vec. The model then learns a single, unified 
+                embedding for <em>repo_rate</em> as a whole expression, rather than 
+                learning separate and potentially misleading vectors for <em>repo</em> 
+                and <em>rate</em> individually.
+            </aside>
+        </div>
+
+        <!-- How It Works -->
+<div class="project-section">
+    <h2>How It Works</h2>
+    <p class="section-text">
+        The approach is grounded in a simple linguistic observation:
+        <em>"You shall know a word by the company it keeps"</em> (Firth, 1957).
+        Words that appear in similar contexts carry similar meanings. Training a model
+        directly on domain text lets it learn those context patterns from professional
+        language, not everyday prose.
+    </p>
+    <p class="section-text">
+        <strong>Explore further: </strong>If you'd like to develop a deeper intuition for how Word2Vec works, including its architecture,
+        training process, and how the geometry of the embedding space encodes meaning, I wrote a dedicated post on it:
+        <a href="../blogs/post.html?post=word2vec" target="_blank">Understanding Word2Vec</a>.
+    </p>
+    
+    <div class="pipeline-steps">
+        <div class="pipeline-step">
+            <div class="step-num">1</div>
+            <div class="pipeline-step-inner">
+                <strong>Domain corpus ingestion and preprocessing</strong>
+                <span>Financial filings (10-K/10-Q), earnings transcripts, and analyst 
+                reports provide raw professional text at scale.</span>
+            </div>
+        </div>
+        <div class="pipeline-connector">|</div>
+        <div class="pipeline-step">
+            <div class="step-num">2</div>
+            <div class="pipeline-step-inner">
+                <strong>Word2Vec training (Skip-gram)</strong>
+                <span>A shallow neural network learns 300-dimensional word vectors by 
+                predicting surrounding context words. No labels or human annotation are 
+                required, as the corpus itself acts as the supervision signal, enabling 
+                scalable training and emergent semantic structure.</span>
+            </div>
+        </div>
+        <div class="pipeline-connector">|</div>
+        <div class="pipeline-step">
+            <div class="step-num">3</div>
+            <div class="pipeline-step-inner">
+                <strong>Query preprocessing</strong>
+                <span>spaCy lemmatisation maps <em>banks / banking / banked</em> -> 
+                <em>bank</em>, ensuring queries align with how the training corpus 
+                was preprocessed.</span>
+            </div>
+        </div>
+        <div class="pipeline-connector">|</div>
+        <div class="pipeline-step">
+            <div class="step-num">4</div>
+            <div class="pipeline-step-inner">
+                <strong>Cosine similarity lookup</strong>
+                <span>The top-N nearest neighbours in embedding space are returned as 
+                domain-accurate synonyms, ranked by semantic closeness. Sub-millisecond 
+                inference is achieved through singleton model loading.</span>
+            </div>
+        </div>
+        <div class="pipeline-connector">|</div>
+        <div class="pipeline-step">
+            <div class="step-num">5</div>
+            <div class="pipeline-step-inner">
+                <strong>Interactive visualisation</strong>
+                <span>Force-directed graph makes the topology of semantic space 
+                tangible, with nodes orbiting closer when semantically similar.
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Tech Stack -->
+        <div class="project-section">
+            <h2>Tech Stack</h2>
+            <div class="tech-tags">
+                <span class="tech-tag">Gensim (Word2Vec)</span>
+                <span class="tech-tag">spaCy</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">Streamlit</span>
+                <span class="tech-tag">D3.js</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">Hugging Face Spaces</span>
+            </div>
+        </div>
+
+        <!-- Deployment Note -->
+        <div class="project-section">
+            <div class="deployment-callout">
+                <i class="fas fa-rocket"></i>
+                <div class="deployment-callout-body">
+                    <strong>Deployment coming soon</strong>
+                    <span>I have fully tested the application locally and making some minor changes to UI part of it. Public deployment coming soon!</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Roadmap -->
+        <div class="project-section">
+            <h2>Roadmap</h2>
+            <ul class="roadmap-list">
+                <li class="done">Core synonym extraction engine</li>
+                <li class="done">Domain-specific Word2Vec training</li>
+                <li class="done">REST API with FastAPI + Uvicorn</li>
+                <li class="done">Interactive visualisation</li>
+                <li class="done">Local end-to-end testing</li>
+                <li>Deployment 🚀</li>
+                <li>Evaluation benchmarks (time permitting)</li>
+            </ul>
+        </div>
+
+        <!-- Resources -->
+        <div class="project-section">
+            <h2>Resources</h2>
+            <div class="resource-links">
+                <a href="https://github.com/ashoknimiwal/contextual-thesaurus" class="btn" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <button class="btn inactive" disabled title="Coming soon on Hugging Face Spaces">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                </button>
+                <button class="btn inactive" disabled>
+                    <i class="fas fa-file-pdf"></i> Paper
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const saved = localStorage.getItem('theme');
+        if (saved) document.documentElement.setAttribute('data-theme', saved);
+    </script>
+</body>
+</html>

@@ -1,8 +1,18 @@
 [
     {
-        "title": "Blog Post 1",
-        "excerpt": "MM YYYY",
+        "title": "Understanding Word2Vec",
+        "excerpt": "An intuitive deep-dive into Word2Vec - from skip-gram to CBOW, and why word embeddings changed NLP forever.",
         "image": "images/blog/post1.jpg",
+        "slug": "word2vec",
+        "tag": "NLP",
         "link": ""
-      }
+    },
+    {
+        "title": "The Evolution of Attention Mechanisms",
+        "excerpt": "Tracing attention from its origins in sequence-to-sequence models to the Transformer architecture that powers modern AI.",
+        "image": "images/blog/post2.jpg",
+        "slug": "attention-mechanisms",
+        "tag": "Deep Learning",
+        "link": ""
+    }
 ]

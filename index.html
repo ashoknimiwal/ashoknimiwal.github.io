@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ashok Kumar</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" href="images/icons/icon-6.png" type="image/x-icon">
     <link rel="shortcut icon" href="images/icons/icon-6.png" type="image/x-icon">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="font.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
@@ -23,35 +25,29 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#blog">Blog</a></li>
             </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
         </nav>
     </header>
 
     <main>
-        <!-- About Me Section -->
+        <!-- About Me Section — populated from api/about.json -->
         <section id="about">
-            <div class="profile-container">
-                <img src="images/profile.jpg" alt="Your Name" class="profile-pic" id="profilePic">
+            <div class="profile-container" id="about-profile">
+                <!-- Profile pic populated dynamically -->
             </div>
-            <div class="about-content">
-                <h2>About Me</h2>
-                <p>Hi There! 👋🏼</p>
-                <p>I am a PhD candidate at the Telfer School of Management, University of Ottawa, specializing in Digital Transformation and Innovation. I received my B.Tech (Hons.) and M.Tech from IIT Kharagpur (both in 2022). </p>
-                <p>During my undergrad studies, I have done various research projects at Telfer School of Management and IIT Kharagpur. My current research interest explores the intersection of finance and natural language processing, where I apply neural networks to analyze large-scale textual data.</p>
-
-                <div class="social-links">
-                    <a href="https://github.com/ashoknimiwal" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://in.linkedin.com/in/ashok-kumar-81b450197" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://twitter.com/nimiwal_ashok" target="_blank"><i class="fab fa-twitter"></i></a>
-                </div>
+            <div class="about-content" id="about-content">
+                <!-- Content populated dynamically -->
             </div>
         </section>
 
         <!-- News Section -->
         <section id="news">
             <h2>News</h2>
-            <ul id="news-container">
+            <div id="news-container">
                 <!-- News items will be dynamically added here -->
-            </ul>
+            </div>
         </section>
 
         <!-- Publications Section -->
@@ -62,7 +58,6 @@
             </div>
         </section>
 
-        
         <!-- Talks Section -->
         <section id="talks">
             <h2>Talks/Workshops</h2>
@@ -73,7 +68,7 @@
 
         <!-- Projects Section -->
         <section id="projects">
-            <h2>Projects</h2>
+            <h2>Pet projects</h2>
             <div id="projects-container" class="project-grid">
                 <!-- Projects will be dynamically added here -->
             </div>
@@ -82,10 +77,9 @@
         <!-- Blog Section -->
         <section id="blog">
             <h2>Blog</h2>
-            <!-- <div id="blogPosts-container" class="blog-grid"> -->
+            <div id="blogPosts-container" class="blog-grid">
                 <!-- Blog posts will be dynamically added here -->
-            <!-- </div> -->
-            <p> Coming soon...</p>
+            </div>
         </section>
 
         <!-- Miscellaneous Section -->
@@ -101,22 +95,22 @@
         <div class="footer-content">
             <div class="footer-signature">
                 <p>
-                    <span class="code-tag">&lt;/&gt;</span> 
-                    <span class="normal">with</span> 
-                    <span class="heart">❤️</span> 
-                    <span class="normal">by</span> 
-                    <span class="bold">Ashok Kumar</span>
+                    <span class="code-tag">&lt;/&gt;</span>
+                    <span class="normal">with</span>
+                    <span class="heart">&#10084;&#65039;</span>
+                    <span class="normal">by</span>
+                    <span class="bold">Ashok</span>
                 </p>
                 <div class="social-icons">
                     <a id="email-button" href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    <!-- <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a> -->
-                    <a href="https://github.com/ashoknimiwal" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://in.linkedin.com/in/ashok-kumar-81b450197" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://twitter.com/nimiwal_ashok" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://github.com/ashoknimiwal" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://in.linkedin.com/in/ashok-kumar-81b450197" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com/nimiwal_ashok" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://scholar.google.ca/citations?hl=en&authuser=1&user=gGUCRcUAAAAJ" target="_blank" aria-label="Google Scholar"><i class="fab fa-google-scholar"></i></a>
                 </div>
             </div>
         </div>
-    </footer>    
+    </footer>
 
     <script src="script.js"></script>
 </body>

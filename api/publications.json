@@ -1,18 +1,38 @@
 [
     {
-      "title": "Using 10-K text to gauge COVID-related corporate disclosure",
-      "authors": "Dutta, S., Kumar, A., Pant, P., Walsh, C., & Dutta, M.",
-      "journal": "Plos One",
-      "abstract": "During the pandemic era, COVID-related disclosure has become quite critical for shareholders and other market participants to understand the uncertainties and challenges associated with a firm’s operation. However, there is no well-grounded and systematic measure to gauge the intensity of COVID-related disclosure and its plausible impact. Therefore, this study develops and validates various COVID-related disclosure measures. More specifically, using a sample of publicly listed U.S. firms and applying natural language processing (NLP) on 10-K reports, we have developed two types of COVID dictionaries (or COVID-related disclosure measurement tools): (a) overall COVID dictionary (count of all COVID-related words/phrases) and (b) contextual COVID-dictionary (count of COVID related words/phrases preceded or followed by positive, negative tones, or financial constraints words). Subsequently, we have validated both types of COVID dictionaries by investigating their association with corporate liquidity events (e.g., dividend payment, dividend change). We confirm that the overall COVID dictionary effectively predicts a firm’s liquidity event. We find similar results for contextual COVID dictionaries with a negative spin (i.e., COVID disclosures with a negative tone or an indication of financial constraints). Our results further show that better-governed firms (e.g., greater board independence, and more female directors) tend to have more COVID-related disclosures, despite the fact that more COVID-related disclosures suppress a firm’s market-based stock performance (e.g. Tobin’s Q). Our results suggest that better-governed firms prefer greater transparency, even if it may hurt their market performance in the short run.",
-      "doi": "https://doi.org/10.1371/journal.pone.0283138",
-      "pdf": "https://drive.google.com/file/d/1w18QnfPfLXOMVIX1fGeztoGm0OJb7Frv/view?usp=sharing"
+        "title": "Developing a Contextual Corporate Integrity Measure Using Large Language Models",
+        "journal": "Under Review (R&R)",
+        "year": "2026",
+        "abstract": "This paper is currently under a Revise & Resubmit (R&R) decision from the journal. Resource links will be updated upon publication.",
+        "citation": "",
+        "doi": "",
+        "pdf": ""
+    },
+    {
+        "title": "Performance measurement through corporate communication: evidence from Indian manufacturing firms",
+        "journal": "International Journal of Productivity and Performance Management",
+        "year": "2025",
+        "abstract": "This study aims to address the limited understanding of how linguistic signals in corporate disclosures influence firm performance in emerging economies, where unique ownership structures, market concentration and policy uncertainties shape disclosure practices. By exploring these dynamics, the study provides insights into the complex interplay between communication strategies and financial outcomes.",
+        "citation": "Pant P, Nimiwal A, Dutta S, Sarmah SP (2026), \"Performance measurement through corporate communication: evidence from Indian manufacturing firms\". International Journal of Productivity and Performance Management, Vol. 75 No. 2 pp. 529\u2013564.",
+        "doi": "https://doi.org/10.1108/IJPPM-09-2024-0645",
+        "pdf": ""
     },
     {
         "title": "Navigating in turbulent times: Using social media to examine small and family-owned business topics and sentiments during the COVID-19 crisis",
-        "authors": "Menezes, S. M., Kumar, A., & Dutta, S.",
         "journal": "Information Systems Frontiers",
-        "abstract": "This paper has been accepted for publication and is currently awaiting its release. I will update the DOI and full-text PDF links once the publication process is complete.",
+        "year": "2024",
+        "abstract": "During a crisis, small and family-owned businesses tend to experience more severe economic consequences than their larger counterparts and often lack financial resources needed to weather the challenges brought about by the crisis. To comprehend the distinct challenges and concerns of small and family-owned businesses during a major crisis, this research study focuses on the recent COVID-19 pandemic, which had a catastrophic effect on businesses and societies alike. To that effect, we address two research questions: First, what topics pertaining to small and family-owned businesses do social media users discuss during the COVID-19 pandemic? To achieve this goal, we employ the BERTopic model, a state-of-the-art technique for topic modeling, to identify and categorize prevalent themes arising from the discourse. Second, what is the impact of major government announcements on these discussions? Specifically, we study how sentiments change around a major government announcement aimed at supporting small businesses in the face of the pandemic. Our findings suggest that government announcements do not change the negative sentiments for most of the topics. This highlights the ineffectiveness of government announcements in alleviating people\u2019s concern related to small and family-owned business and underscores the importance of a better consultation process and communication strategy by policymakers. The implications of our study transcend recent COVID-19 effects, as World Health Organization (WHO) cautions that there could be even worse health and socio-economic crises in the future, and we need to be better prepared to handle subsequent devastating effects.",
+        "citation": "Menezes, S.M., Kumar, A. & Dutta, S. Navigating in Turbulent Times: Using Social Media to Examine Small and family-Owned Business Topics and Sentiments during the COVID-19 Crisis. Inf Syst Front 27, 1671\u20131691 (2025).",
         "doi": "https://doi-org.proxy.bib.uottawa.ca/10.1007/s10796-024-10542-6",
-        "pdf": "https://drive.google.com/file/d/1mpzuvvvYkdJxJXmvOCPmJZo2IU8KLxP8/view?usp=sharing"
-      }
-  ]
+        "pdf": ""
+    },
+    {
+        "title": "Using 10-K text to gauge COVID-related corporate disclosure",
+        "journal": "Plos One",
+        "year": "2023",
+        "abstract": "During the pandemic era, COVID-related disclosure has become quite critical for shareholders and other market participants to understand the uncertainties and challenges associated with a firm\u2019s operation. However, there is no well-grounded and systematic measure to gauge the intensity of COVID-related disclosure and its plausible impact. Therefore, this study develops and validates various COVID-related disclosure measures. More specifically, using a sample of publicly listed U.S. firms and applying natural language processing (NLP) on 10-K reports, we have developed two types of COVID dictionaries (or COVID-related disclosure measurement tools): (a) overall COVID dictionary (count of all COVID-related words/phrases) and (b) contextual COVID-dictionary (count of COVID related words/phrases preceded or followed by positive, negative tones, or financial constraints words). Subsequently, we have validated both types of COVID dictionaries by investigating their association with corporate liquidity events (e.g., dividend payment, dividend change). We confirm that the overall COVID dictionary effectively predicts a firm\u2019s liquidity event. We find similar results for contextual COVID dictionaries with a negative spin (i.e., COVID disclosures with a negative tone or an indication of financial constraints). Our results further show that better-governed firms (e.g., greater board independence, and more female directors) tend to have more COVID-related disclosures, despite the fact that more COVID-related disclosures suppress a firm\u2019s market-based stock performance (e.g. Tobin\u2019s Q). Our results suggest that better-governed firms prefer greater transparency, even if it may hurt their market performance in the short run.",
+        "citation": "Dutta S, Kumar A, Pant P, Walsh C, Dutta M (2023) Using 10-K text to gauge COVID-related corporate disclosure. PLoS ONE 18(3): e0283138.",
+        "doi": "https://doi.org/10.1371/journal.pone.0283138",
+        "pdf": "https://drive.google.com/file/d/15iWG7oIROgMfo8WeusD_cI7BnsrmrS7s/view?usp=sharing"
+    }
+]

@@ -1,0 +1,15 @@
+{
+    "name": "Ashok Kumar",
+    "profileImage": "images/profile.jpg",
+    "greeting": "Hi there!",
+    "bio": [
+        "I am a PhD candidate at the Telfer School of Management, University of Ottawa, specializing in Digital Transformation and Innovation. I did my Bachelor's from IIT Kharagpur (both in 2022) and joined the PhD program immediately after graduation.",
+        "During my undergrad studies, I have done various research projects at Telfer School of Management and IIT Kharagpur. My current research interest explores the intersection of finance and natural language processing, where I apply neural networks to analyze large-scale textual data."
+    ],
+    "links": [
+        { "label": "GitHub",         "url": "https://github.com/ashoknimiwal",                                                          "icon": "fab fa-github" },
+        { "label": "LinkedIn",       "url": "https://in.linkedin.com/in/ashok-kumar-81b450197",                                          "icon": "fab fa-linkedin" },
+        { "label": "X",              "url": "https://x.com/nimiwal_ashok",                                                               "icon": "fab fa-x-twitter" },
+        { "label": "Google Scholar", "url": "https://scholar.google.ca/citations?hl=en&authuser=1&user=gGUCRcUAAAAJ",                    "icon": "fab fa-google-scholar" }
+    ]
+}

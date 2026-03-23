@@ -1,0 +1,12 @@
+/* ============================================
+   FONT CONFIGURATION
+   To change the font:
+   1. Replace the @import URL with the new one from fonts.google.com
+   2. Update --font-body with the new font family name
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}

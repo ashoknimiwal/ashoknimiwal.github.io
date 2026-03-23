@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — Ashok Kumar</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="../images/icons/icon-6.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../font.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="blog-post-page">
+        <a href="../index.html#blog" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Blog
+        </a>
+
+        <div id="blog-content">
+            <p style="color: var(--text-muted);">Loading...</p>
+        </div>
+    </div>
+
+    <script>
+        // Apply saved theme
+        const saved = localStorage.getItem('theme');
+        if (saved) document.documentElement.setAttribute('data-theme', saved);
+
+        // Get slug from URL params
+        const params = new URLSearchParams(window.location.search);
+        const slug = params.get('post');
+
+        if (slug) {
+            fetch(`${slug}.md`)
+                .then(res => {
+                    if (!res.ok) throw new Error('Post not found');
+                    return res.text();
+                })
+                .then(md => {
+                    // Parse frontmatter
+                    const fmMatch = md.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+                    let title = '', date = '', content = md;
+
+                    if (fmMatch) {
+                        const fm = fmMatch[1];
+                        content = fmMatch[2];
+                        const titleMatch = fm.match(/title:\s*(.*)/);
+                        const dateMatch = fm.match(/date:\s*(.*)/);
+                        if (titleMatch) title = titleMatch[1].trim();
+                        if (dateMatch) date = dateMatch[1].trim();
+                    }
+
+                    const container = document.getElementById('blog-content');
+                    document.title = `${title} — Ashok Kumar`;
+
+                    container.innerHTML = `
+                        <h1>${title}</h1>
+                        <div class="post-meta">${date}</div>
+                        <div class="post-content">${marked.parse(content)}</div>
+                    `;
+                })
+                .catch(() => {
+                    document.getElementById('blog-content').innerHTML =
+                        '<p style="color: var(--text-muted);">This post is coming soon. Check back later!</p>';
+                });
+        } else {
+            document.getElementById('blog-content').innerHTML =
+                '<p style="color: var(--text-muted);">No post specified.</p>';
+        }
+    </script>
+</body>
+</html>

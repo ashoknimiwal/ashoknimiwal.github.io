@@ -1,11 +1,51 @@
 [
     {
-      "title": "Porfolio Optimization using Python",
-      "date": "Apr 2024",
-      "event": "FM",
-      "location": "uOttawa",
-      "code": "https://colab.research.google.com/drive/19DfZNE1OHo8ZTiFGcy9xj_K5cUy917oq?usp=sharing",
-      "slides": "",
-      "video": ""
+        "title": "Portfolio Optimization using Python",
+        "date": "Apr 2026",
+        "event": "Financial Modeling",
+        "location": "uOttawa",
+        "tag": "Forthcoming",
+        "audience": "",
+        "description": "A Python-based portfolio optimization workshop simulating thousands of portfolio combinations using Monte Carlo methods to identify the efficient frontier, minimum variance portfolio, and maximum Sharpe ratio portfolio - with Security Market Line (SML) analysis and full implementation on real market data.",
+        "code": "",
+        "slides": "",
+        "video": ""
+    },
+    {
+        "title": "COVID-19 and Corporate Disclosure & Small Business Sentiment",
+        "date": "Feb 2025",
+        "event": "Guest Lecture",
+        "location": "uOttawa",
+        "tag": "",
+        "audience": "MSc & PhD students",
+        "description": "A joint presentation of two of my published research papers examining the impact of COVID-19: (1) gauging COVID-related corporate disclosure using NLP on 10-K reports, and (2) analyzing small and family-owned business topics and sentiments on social media during the pandemic using BERTopic and statistical tests.",
+        "code": "",
+        "slides": "https://drive.google.com/file/d/1FaW2gvhPJz84goLy9E66smPeKMvhXDsN/view?usp=sharing",
+        "video": ""
+    },
+    {
+        "title": "Measuring Corporate Culture Using Machine Learning",
+        "date": "Mar 2026",
+        "event": "Class Presentation",
+        "location": "uOttawa",
+        "tag": "",
+        "audience": "",
+        "description": "Presented the paper by Kai Li et al. on measuring corporate culture using word embedding models trained on 209,480 earnings call transcripts. Focused on the methodology and the regression models used to link culture to business outcomes such as operational efficiency, risk-taking, and firm value.",
+        "code": "",
+        "slides": "https://drive.google.com/file/d/1wKWaA-0gLW3CUvxaQPC66xQAtPZ7GbZp/view?usp=sharing",
+        "video": ""
+    },
+    {
+        "title": "Understanding Word2Vec: Intuition and Applications",
+        "date": "Feb 2024",
+        "event": "Guest Lecture",
+        "location": "uOttawa",
+        "tag": "",
+        "audience": "MSc & PhD students",
+        "description": "An introductory presentation on Word2Vec covering the core intuition behind distributed word representations, the Skip-gram and CBOW architectures, and how word embeddings transformed NLP - without deep-diving into the mathematical details.",
+        "code": "",
+        "slides": "https://drive.google.com/file/d/1TJB9pqxvRtUvZWV4L5Lb_KnohrovIJfg/view?usp=sharing",
+        "video": ""
     }
-  ]
+    
+]
