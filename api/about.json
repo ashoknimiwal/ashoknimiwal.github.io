@@ -3,8 +3,9 @@
     "profileImage": "images/profile.jpg",
     "greeting": "Hi there!",
     "bio": [
-        "I am a PhD candidate at the Telfer School of Management, University of Ottawa, specializing in Digital Transformation and Innovation. I did my Bachelor's from IIT Kharagpur (both in 2022) and joined the PhD program immediately after graduation.",
-        "During my undergrad studies, I have done various research projects at Telfer School of Management and IIT Kharagpur. My current research interest explores the intersection of finance and natural language processing, where I apply neural networks to analyze large-scale textual data."
+        "I am a PhD candidate at the Telfer School of Management, uOttawa, specializing in Digital Transformation and Innovation (DTI). I did my Bachelor's from IIT Kharagpur and joined the DTI PhD program at Telfer School immediately after graduation.",
+        "During my undergrad studies, I have done various research projects at Telfer School of Management and IIT Kharagpur. My current research interest explores the intersection of finance and natural language processing, where I apply neural networks to analyze large-scale textual data.",
+        "My research has been published in Information Systems Frontiers, International Journal of Productivity and Performance Management, and PLOS One, with a paper currently under review at Information Systems Frontiers. I am also honoured to serve as a peer reviewer for Information Systems Frontiers (Springer)."
     ],
     "links": [
         { "label": "GitHub",         "url": "https://github.com/ashoknimiwal",                                                          "icon": "fab fa-github" },
