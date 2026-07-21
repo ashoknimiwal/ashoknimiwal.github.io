@@ -106,6 +106,101 @@
                 ability to say <em>which call</em> is wrong.
             </p>
         </div>
+
+        <!-- How It Works -->
+        <div class="project-section">
+            <h2>How It Works</h2>
+            <p class="section-text">
+                Every segment is classified against a risk theme. The first theme is
+                <strong>corporate integrity</strong>, broken into four components —
+                Accountability, Compliance, Moral Integrity, and Honesty. A segment can carry any
+                combination of them, or none. Classification runs through a five-stage cooperative
+                blackboard, at most ten LLM calls per segment:
+            </p>
+
+            <div class="pipeline-steps">
+                <div class="pipeline-step">
+                    <div class="step-num">1</div>
+                    <div class="pipeline-step-inner">
+                        <strong>Gate — is this segment relevant at all?</strong>
+                        <span>A cheap, recall-optimised call filters out irrelevant segments
+                        before any specialist agent runs.</span>
+                    </div>
+                </div>
+                <div class="pipeline-branch">&#8627; not relevant — stop here, nine downstream calls skipped</div>
+                <div class="pipeline-connector">|</div>
+
+                <div class="pipeline-step">
+                    <div class="step-num">2</div>
+                    <div class="pipeline-step-inner">
+                        <strong>Observe — four component agents, in parallel</strong>
+                        <span>Each agent posts a factual observation about the segment to a shared
+                        blackboard. No judgements yet, only what each one noticed.</span>
+                    </div>
+                </div>
+                <div class="pipeline-connector">|</div>
+
+                <div class="pipeline-step">
+                    <div class="step-num">3</div>
+                    <div class="pipeline-step-inner">
+                        <strong>Verdict — the same four agents, now reading their peers</strong>
+                        <span>Each votes yes or no on its own component with reasoning, having
+                        read every other agent's notes first.</span>
+                    </div>
+                </div>
+                <div class="pipeline-connector">|</div>
+
+                <div class="pipeline-step">
+                    <div class="step-num">4</div>
+                    <div class="pipeline-step-inner">
+                        <strong>Synthesize — consolidate the votes</strong>
+                        <span>A synthesiser turns four independent votes into the final
+                        multi-label output.</span>
+                    </div>
+                </div>
+                <div class="pipeline-connector">|</div>
+
+                <div class="pipeline-step conditional">
+                    <div class="step-num">5</div>
+                    <div class="pipeline-step-inner">
+                        <strong>Force — conditional, fires only on an empty result</strong>
+                        <span>When nothing at all was labelled, the system commits to one best fit
+                        and marks the answer as forced.</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="subsection-heading">Three design points</h3>
+
+            <div class="note-list">
+                <div class="note-item">
+                    <strong>The gate is the cost lever.</strong>
+                    <span>
+                        One cheap call avoids nine expensive ones. It currently avoids 43% of
+                        downstream work at 2.7% leakage — the single largest determinant of what
+                        the system costs to run, and the reason a 100k-segment corpus is tractable
+                        at all.
+                    </span>
+                </div>
+                <div class="note-item">
+                    <strong>The blackboard is the cooperative step.</strong>
+                    <span>
+                        Agents observe before they judge, and judge only after reading each other.
+                        Honesty can lean on what Accountability noticed. Splitting observation from
+                        verdict is what makes the cooperation real rather than four independent
+                        classifiers wearing a shared name.
+                    </span>
+                </div>
+                <div class="note-item">
+                    <strong>Forcing is a designed signal, not a fallback hack.</strong>
+                    <span>
+                        When the system labels nothing, it is made to commit to one component and
+                        mark that answer as forced — turning genuine ambiguity into a measurable
+                        rate instead of a silent empty result.
+                    </span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>

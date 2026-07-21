@@ -1196,6 +1196,60 @@ footer .code-tag {
     margin-bottom: 1rem;
 }
 
+.project-page .subsection-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.75rem 0 0.75rem;
+}
+
+/* Early-exit branch off a pipeline stage */
+.project-page .pipeline-branch {
+    margin: 0.4rem 0 0 3rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* A conditional stage — dashed to show it does not always fire */
+.project-page .pipeline-step.conditional {
+    border-style: dashed;
+}
+
+.project-page .pipeline-step.conditional .step-num {
+    background: rgba(251, 191, 36, 0.12);
+    border-color: rgba(251, 191, 36, 0.4);
+    color: #fbbf24;
+}
+
+/* Stacked notes — a short series of standalone claims */
+.project-page .note-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin: 1rem 0;
+}
+
+.project-page .note-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0.2rem 0 0.2rem 1.1rem;
+    border-left: 3px solid var(--accent-blue);
+}
+
+.project-page .note-item strong {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.project-page .note-item span {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
 /* Side-by-side points — two related ideas that should be read as a pair */
 .project-page .point-grid {
     display: grid;
