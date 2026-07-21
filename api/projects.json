@@ -1,5 +1,12 @@
 [
     {
+        "title": "ExposureIQ",
+        "description": "A multi-agent LLM pipeline that scores 100k+ earnings-call segments for corporate-integrity signal, paired with an evaluation harness that attributes every error to the specific agent that caused it.",
+        "image": "images/projects/project1.jpg",
+        "slug": "exposureiq",
+        "status": "Active research"
+    },
+    {
         "title": "Contextual Thesaurus",
         "description": "A domain-aware synonym engine powered by Word2Vec embeddings trained on financial corpora. Querying \"liquid\" returns cash, assets, solvent — not fluid, watery, wet.",
         "image": "images/projects/project4.jpg",

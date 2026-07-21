@@ -371,7 +371,7 @@ function createProjectCard(project) {
         card.rel = 'noopener noreferrer';
     }
 
-    const statusClass = project.status === 'Active' ? '' : 'wip';
+    const statusClass = project.status && project.status.startsWith('Active') ? '' : 'wip';
     const statusText = project.status || 'In Progress';
 
     card.innerHTML = `
