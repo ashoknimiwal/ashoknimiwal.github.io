@@ -2,7 +2,7 @@
     {
         "title": "ExposureIQ",
         "description": "A multi-agent LLM pipeline that scores 100k+ earnings-call segments for corporate-integrity signal, paired with an evaluation harness that attributes every error to the specific agent that caused it.",
-        "image": "images/projects/project1.jpg",
+        "image": "images/projects/exposureiq.svg",
         "slug": "exposureiq",
         "status": "Active research"
     },

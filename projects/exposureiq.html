@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExposureIQ — Emerging-Risk Signals from Earnings Calls</title>
+    <meta name="description" content="A multi-agent LLM pipeline that scores 106,000+ earnings-call segments for corporate-integrity risk exposure, with a research-grade evaluation harness that attributes every error to the agent that caused it.">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="../images/icons/icon-6.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../font.css">
+</head>
+<body>
+    <div class="project-page">
+        <a href="../index.html#projects" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Projects
+        </a>
+
+        <h1>ExposureIQ</h1>
+
+        <div class="project-badges">
+            <span class="project-status active">
+                <span class="status-dot"></span>
+                Active research
+            </span>
+            <span class="project-status neutral">
+                <i class="fas fa-lock"></i>
+                Private repo
+            </span>
+        </div>
+
+        <p class="project-lead">
+            Measuring how exposed public companies are to emerging risks, from what
+            executives say on earnings calls.
+        </p>
+
+        <div class="project-description">
+            <p>
+                ExposureIQ ingests a five-year panel of U.S. earnings calls and classifies each
+                text segment against a risk theme through a cooperative multi-agent pipeline,
+                where four specialist agents share findings on a blackboard before voting. The
+                harder half of the project is the evaluation harness: it scores not just the
+                system's output but each agent inside it, records enough provenance to reproduce
+                any number, and diffs runs example-by-example — so a prompt tweak can't quietly
+                trade good answers for bad ones.
+            </p>
+        </div>
+
+        <div class="stat-tiles">
+            <div class="stat-tile">
+                <span class="stat-value">106,597</span>
+                <span class="stat-label">Text segments</span>
+            </div>
+            <div class="stat-tile">
+                <span class="stat-value">1,000</span>
+                <span class="stat-label">Earnings calls</span>
+            </div>
+            <div class="stat-tile">
+                <span class="stat-value">5-stage</span>
+                <span class="stat-label">Agent pipeline</span>
+            </div>
+            <div class="stat-tile">
+                <span class="stat-value">88</span>
+                <span class="stat-label">Tests</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const saved = localStorage.getItem('theme');
+        if (saved) document.documentElement.setAttribute('data-theme', saved);
+    </script>
+</body>
+</html>
