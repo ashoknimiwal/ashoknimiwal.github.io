@@ -1196,6 +1196,37 @@ footer .code-tag {
     margin-bottom: 1rem;
 }
 
+/* Side-by-side points — two related ideas that should be read as a pair */
+.project-page .point-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.9rem;
+    margin: 1.25rem 0;
+}
+
+.project-page .point-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-card);
+}
+
+.project-page .point-card strong {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.project-page .point-card span {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+}
+
 .project-page .comparison-table-wrap {
     overflow-x: auto;
     margin: 1.25rem 0;
@@ -1481,6 +1512,10 @@ footer .code-tag {
     .project-page h1,
     .blog-post-page h1 {
         font-size: 1.5rem;
+    }
+
+    .project-page .point-grid {
+        grid-template-columns: 1fr;
     }
 }
 

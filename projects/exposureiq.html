@@ -66,6 +66,46 @@
                 <span class="stat-label">Tests</span>
             </div>
         </div>
+
+        <!-- The Problem -->
+        <div class="project-section">
+            <h2>The Problem</h2>
+            <p class="section-text">
+                Emerging risks — integrity failures, compliance exposure, governance breakdowns —
+                show up in executive language long before they show up in filings or headlines.
+                Earnings calls are a dense, quarterly, cross-sector source of that language: a
+                standing invitation to measure something that financial statements cannot see.
+            </p>
+            <p class="section-text">
+                Two things make that hard.
+            </p>
+
+            <div class="point-grid">
+                <div class="point-card">
+                    <strong>The signal is multi-label and boundary-fuzzy</strong>
+                    <span>
+                        A single answer in a Q&amp;A session can touch accountability and honesty
+                        at once, or neither. Reasonable annotators disagree on where one component
+                        ends and the next begins — so the ground truth is itself contested.
+                    </span>
+                </div>
+                <div class="point-card">
+                    <strong>An LLM pipeline you can't decompose can't be trusted</strong>
+                    <span>
+                        End-to-end F1 tells you the system is wrong. It does not tell you whether
+                        the gate dropped the segment, an agent hallucinated evidence, or the
+                        synthesizer overrode a correct vote.
+                    </span>
+                </div>
+            </div>
+
+            <p class="section-text">
+                Plenty of work treats the first as the interesting problem.
+                <strong>ExposureIQ treats the second as the actual engineering problem</strong> —
+                a pipeline making up to ten model calls per input is only as useful as your
+                ability to say <em>which call</em> is wrong.
+            </p>
+        </div>
     </div>
 
     <script>

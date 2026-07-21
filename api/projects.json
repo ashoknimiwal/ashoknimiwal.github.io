@@ -9,7 +9,7 @@
     {
         "title": "Contextual Thesaurus",
         "description": "A domain-aware synonym engine powered by Word2Vec embeddings trained on financial corpora. Querying \"liquid\" returns cash, assets, solvent — not fluid, watery, wet.",
-        "image": "images/projects/project4.jpg",
+        "image": "images/projects/contextual-thesaurus.svg",
         "link": "https://github.com/ashoknimiwal/contextual-thesaurus",
         "slug": "contextual-thesaurus",
         "status": "Work in Progress",
