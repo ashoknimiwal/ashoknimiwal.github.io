@@ -1222,6 +1222,74 @@ footer .code-tag {
     color: #fbbf24;
 }
 
+/* Horizontal chain of stages — scrolls rather than wrapping mid-flow */
+.project-page .flow-chain {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 1.25rem 0;
+    padding-bottom: 0.4rem;
+    overflow-x: auto;
+}
+
+.project-page .flow-node {
+    flex-shrink: 0;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--bg-card);
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+
+.project-page .flow-arrow {
+    flex-shrink: 0;
+    color: var(--accent-blue);
+    font-size: 0.9rem;
+}
+
+/* A finding worth stopping on */
+.project-page .pullquote {
+    margin: 1.5rem 0;
+    padding: 1.25rem 1.4rem;
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--accent-green);
+    border-radius: 0 8px 8px 0;
+    background: var(--bg-abstract);
+}
+
+.project-page .pullquote p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+}
+
+.project-page .pullquote strong {
+    color: var(--accent-green);
+    font-weight: 600;
+}
+
+.project-page .pullquote .pullquote-tail {
+    margin-top: 0.8rem;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+}
+
+/* Tables whose first column is prose, not an identifier */
+.project-page .comparison-table.prose td:first-child {
+    font-family: var(--font-body);
+    font-size: inherit;
+}
+
+.project-page .comparison-table code {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    color: var(--accent-cyan);
+}
+
 /* Stacked notes — a short series of standalone claims */
 .project-page .note-list {
     display: flex;

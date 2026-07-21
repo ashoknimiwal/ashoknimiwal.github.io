@@ -201,6 +201,131 @@
                 </div>
             </div>
         </div>
+
+        <!-- Evaluation -->
+        <div class="project-section">
+            <h2>Evaluation: the actual hard part</h2>
+            <p class="section-text">
+                Most work with LLM pipelines stops at <em>"the output looks good."</em> The harness
+                is built on the opposite premise — and it is the larger half of the project.
+            </p>
+            <p class="section-text">
+                It is deliberately theme-agnostic. Metrics never see a pipeline object. An adapter
+                flattens whatever ran into <strong>views</strong>, each one a single comparable
+                quantity, and a <strong>task</strong> binds a view to a set of metrics. Everything
+                downstream — metric dispatch, storage, reporting, regression diffing — is driven
+                off the task list.
+            </p>
+
+            <div class="flow-chain">
+                <span class="flow-node">pipeline run</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-node">adapter</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-node">views</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-node">tasks</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-node">metrics</span>
+            </div>
+
+            <p class="section-text">
+                The payoff is that extending the system is cheap and the cost is predictable:
+            </p>
+
+            <div class="comparison-table-wrap">
+                <table class="comparison-table prose">
+                    <thead>
+                        <tr>
+                            <th>To add&hellip;</th>
+                            <th>You change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>a metric</td>
+                            <td>register it, name it in a task</td>
+                        </tr>
+                        <tr>
+                            <td>an agent or stage</td>
+                            <td>emit one more view, declare one more task</td>
+                        </tr>
+                        <tr>
+                            <td>an entire new theme, with a different architecture</td>
+                            <td>one adapter class</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="subsection-heading">Six tasks, one per hand-off</h3>
+            <p class="section-text">
+                Each hand-off in the pipeline is scored separately, so an error can be attributed
+                to the stage that produced it rather than to the system as a whole:
+            </p>
+
+            <div class="comparison-table-wrap">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Task</th>
+                            <th>What it scores</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>gate</code></td>
+                            <td>Whether the relevance filter kept what it should have</td>
+                        </tr>
+                        <tr>
+                            <td><code>observations</code></td>
+                            <td>The notes each agent posts to the blackboard</td>
+                        </tr>
+                        <tr>
+                            <td><code>verdict_labels</code></td>
+                            <td>The stage-3 votes, scored as if they were the answer</td>
+                        </tr>
+                        <tr>
+                            <td><code>final_labels</code></td>
+                            <td>The system's actual output</td>
+                        </tr>
+                        <tr>
+                            <td><code>synthesis</code></td>
+                            <td>The hand-off from votes to final labels</td>
+                        </tr>
+                        <tr>
+                            <td><code>system</code></td>
+                            <td>Errors, calls, tokens, latency, cost</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="subsection-heading">What that bought</h3>
+            <p class="section-text">
+                Scoring the same run at two different stages answers a question end-to-end F1
+                cannot even express — <em>is the synthesiser helping?</em>
+            </p>
+
+            <blockquote class="pullquote">
+                <p>
+                    Scoring stage-3 votes as if they were the final answer gives micro F1
+                    <strong>0.673</strong>. The actual final output scores <strong>0.698</strong>.
+                    The synthesiser is <strong>adding 2.6 points</strong> — filtering over-eager
+                    votes rather than destroying signal.
+                </p>
+                <p class="pullquote-tail">
+                    Had the inequality run the other way, the fix would belong in stage 4 — and
+                    end-to-end F1 alone would never have said so.
+                </p>
+            </blockquote>
+
+            <p class="section-text">
+                This is a diagnostic claim rather than a leaderboard number, and it is the kind of
+                claim the harness exists to make. It points at a specific stage, and it implies a
+                specific fix.
+            </p>
+        </div>
     </div>
 
     <script>
