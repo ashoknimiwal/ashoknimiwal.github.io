@@ -326,6 +326,92 @@
                 specific fix.
             </p>
         </div>
+
+        <!-- Results -->
+        <div class="project-section">
+            <h2>Results</h2>
+
+            <div class="callout warn">
+                <i class="fas fa-flask"></i>
+                <div class="callout-body">
+                    <strong>Active research — these numbers are not final.</strong>
+                    <span>
+                        Everything below comes from a single baseline run against a 300-example
+                        validation pool. Methodology iteration is ongoing — prompt versions, model
+                        comparisons, and aggregation from segment labels up to company-level
+                        exposure signals — and these figures are expected to move.
+                    </span>
+                </div>
+            </div>
+
+            <p class="section-text">
+                The panel covers 50 companies, five in each of 10 GICS sectors: 1,000 earnings
+                calls and 106,597 segments of prepared remarks and Q&amp;A, spanning 2019–2025 and
+                concentrated in 2020–2025.
+            </p>
+
+            <h3 class="subsection-heading">Current baseline</h3>
+            <p class="table-caption">
+                <code>run_04_v1.0</code> &middot; Gemma-4-31B &middot; prompt v1.0 &middot; n=300
+                validation pool
+            </p>
+
+            <div class="comparison-table-wrap">
+                <table class="comparison-table prose">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Gate recall</td><td><code>0.973</code></td></tr>
+                        <tr><td>Gate leakage rate</td><td><code>0.027</code></td></tr>
+                        <tr><td>Final micro F1</td><td><code>0.698</code></td></tr>
+                        <tr><td>Final macro F1</td><td><code>0.699</code></td></tr>
+                        <tr><td>Subset accuracy</td><td><code>0.600</code></td></tr>
+                        <tr><td>Verdict-stage micro F1</td><td><code>0.673</code></td></tr>
+                        <tr><td>Forced rate</td><td><code>0.030</code></td></tr>
+                        <tr><td>LLM calls per segment</td><td><code>6.19</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="subsection-heading">The dominant failure mode is over-calling</h3>
+            <p class="section-text">
+                The system says too much rather than too little, and the asymmetry is not close:
+            </p>
+
+            <div class="stat-tiles">
+                <div class="stat-tile warn">
+                    <span class="stat-value">32.7%</span>
+                    <span class="stat-label">Spurious labels</span>
+                </div>
+                <div class="stat-tile">
+                    <span class="stat-value">2.0%</span>
+                    <span class="stat-label">Missed labels</span>
+                </div>
+                <div class="stat-tile warn">
+                    <span class="stat-value">0.575</span>
+                    <span class="stat-label">Micro precision</span>
+                </div>
+                <div class="stat-tile">
+                    <span class="stat-value">0.889</span>
+                    <span class="stat-label">Micro recall</span>
+                </div>
+            </div>
+
+            <p class="section-text">
+                That points the next iteration at tightening the component definitions rather than
+                at prompt fiddling — and the report's label-substitution table names the exact
+                component pairs being confused, so the work has somewhere concrete to start.
+            </p>
+
+            <p class="section-text">
+                For scale: roughly 5,100 lines of Python across the pipeline and harness, with 88
+                tests including a pinned-baseline regression guard.
+            </p>
+        </div>
     </div>
 
     <script>

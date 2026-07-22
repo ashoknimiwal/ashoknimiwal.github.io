@@ -1278,6 +1278,68 @@ footer .code-tag {
     color: var(--text-secondary);
 }
 
+/* Generic callout — icon plus a lead line and body */
+.project-page .callout {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    padding: 1rem 1.2rem;
+    margin: 1.25rem 0;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-abstract);
+}
+
+.project-page .callout i {
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    color: var(--accent-blue);
+}
+
+.project-page .callout-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.project-page .callout-body strong {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.project-page .callout-body span {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+}
+
+/* A caveat the reader should not skip */
+.project-page .callout.warn {
+    border-color: rgba(251, 191, 36, 0.35);
+    background: rgba(251, 191, 36, 0.07);
+}
+
+.project-page .callout.warn i {
+    color: #fbbf24;
+}
+
+.project-page .table-caption {
+    margin: 0 0 0.5rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.project-page .table-caption code {
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+}
+
+/* A figure that reads as a problem rather than an achievement */
+.project-page .stat-tile.warn .stat-value {
+    color: #fbbf24;
+}
+
 /* Tables whose first column is prose, not an identifier */
 .project-page .comparison-table.prose td:first-child {
     font-family: var(--font-body);
