@@ -1409,6 +1409,16 @@ footer .code-tag {
     font-size: inherit;
 }
 
+/* A row-label comparison across two peers — first column reads as a header,
+   both value columns treated symmetrically (no green third column) */
+.project-page .comparison-table.themes td:first-child {
+    font-weight: 600;
+}
+
+.project-page .comparison-table.themes td:nth-child(3) {
+    color: var(--text-secondary);
+}
+
 .project-page .comparison-table code {
     font-family: var(--font-mono);
     font-size: 0.85em;
