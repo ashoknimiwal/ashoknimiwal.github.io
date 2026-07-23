@@ -1133,13 +1133,6 @@ footer .code-tag {
     color: var(--text-muted);
 }
 
-/* For values too long to sit at full size in a single tile */
-.project-page .stat-value.dense {
-    font-size: 1.05rem;
-    letter-spacing: -0.02em;
-    white-space: nowrap;
-}
-
 .project-page .project-description {
     color: var(--text-secondary);
     font-size: 1rem;
@@ -1255,6 +1248,32 @@ footer .code-tag {
     flex-shrink: 0;
     color: var(--accent-blue);
     font-size: 0.9rem;
+}
+
+/* The thesis — a full-bleed statement the page turns on */
+.project-page .thesis {
+    margin: 2rem 0;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.project-page .thesis p {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--text-primary);
+}
+
+.project-page .thesis .thesis-sub {
+    display: block;
+    max-width: 60ch;
+    margin: 1rem auto 0;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
 }
 
 /* A finding worth stopping on */

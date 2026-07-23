@@ -80,6 +80,53 @@
                 <span class="stat-label">Tests</span>
             </div>
         </div>
+
+        <!-- The Problem -->
+        <div class="project-section">
+            <h2>The Problem</h2>
+            <p class="section-text">
+                Both obvious ways to measure this fail — one too blunt to catch the signal, the
+                other too unstable to defend.
+            </p>
+
+            <div class="point-grid">
+                <div class="point-card">
+                    <strong>Keyword counting</strong>
+                    <span>
+                        The classical approach can't tell aspiration from execution, and can't tell
+                        an executive taking responsibility from one using the very same vocabulary
+                        to avoid it. The words match; the meaning is opposite.
+                    </span>
+                </div>
+                <div class="point-card">
+                    <strong>Asking an LLM to "score this 0–100"</strong>
+                    <span>
+                        Fails worse. The number is unstable across a universe, drifts silently the
+                        moment you upgrade the model, and — fatally for anyone defending it to an
+                        investment committee or a regulator — <strong>cannot be audited.</strong>
+                        You can't point at a portfolio and say <em>the model felt that way.</em>
+                    </span>
+                </div>
+            </div>
+
+            <p class="section-text">
+                ThemeScope is built on the single constraint that fixes both.
+            </p>
+        </div>
+
+        <!-- The Thesis -->
+        <div class="project-section">
+            <blockquote class="thesis">
+                <p>The language model is a reader and a classifier. It is never a scorer.</p>
+                <span class="thesis-sub">
+                    Agents read text and emit <em>labels</em> with their reasoning; the score is
+                    deterministic arithmetic over those labels, and nothing else. That one
+                    separation turns a black box into a research instrument — the output becomes
+                    reproducible, point-in-time, backtestable, auditable to the sentence, and safe
+                    to upgrade the model underneath.
+                </span>
+            </blockquote>
+        </div>
     </div>
 
     <script>
