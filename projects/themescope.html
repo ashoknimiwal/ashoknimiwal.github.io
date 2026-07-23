@@ -127,6 +127,31 @@
                 </span>
             </blockquote>
         </div>
+
+        <!-- The Three Laws -->
+        <div class="project-section">
+            <h2>Enforced as three laws</h2>
+            <p class="section-text">
+                Not a guideline — three rules the system obeys in code, not in a prompt.
+            </p>
+            <ol class="law-list">
+                <li>
+                    <span class="law-n">1</span>
+                    <p>The model classifies and orchestrates; it <strong>never emits a number</strong>
+                    that reaches the output.</p>
+                </li>
+                <li>
+                    <span class="law-n">2</span>
+                    <p>Scoring is offline and <strong>append-only</strong> — a prompt or model change
+                    writes new rows under a new config hash, it never overwrites an old score.</p>
+                </li>
+                <li>
+                    <span class="law-n">3</span>
+                    <p>Provenance rides on every row, and <strong>unverified data is excluded</strong>
+                    from every cross-sectional statistic.</p>
+                </li>
+            </ol>
+        </div>
     </div>
 
     <script>

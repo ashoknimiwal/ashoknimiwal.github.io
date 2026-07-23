@@ -1276,6 +1276,43 @@ footer .code-tag {
     color: var(--text-secondary);
 }
 
+/* Three laws — one line each, kept deliberately terse */
+.project-page .law-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.project-page .law-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+}
+
+.project-page .law-list .law-n {
+    flex-shrink: 0;
+    min-width: 1.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--accent-purple);
+}
+
+.project-page .law-list p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.project-page .law-list p strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
 /* A finding worth stopping on */
 .project-page .pullquote {
     margin: 1.5rem 0;
