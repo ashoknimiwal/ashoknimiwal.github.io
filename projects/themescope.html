@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThemeScope — Auditable LLM Scoring for Structural Themes</title>
+    <meta name="description" content="A multi-agent research system that scores S&P 1500 companies on conduct and AI exposure from earnings calls and 10-Ks — with every number traceable back to the sentence that produced it.">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="../images/icons/icon-6.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../font.css">
+</head>
+<body>
+    <div class="project-page">
+        <a href="../index.html#projects" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Projects
+        </a>
+
+        <h1>ThemeScope</h1>
+
+        <div class="project-badges">
+            <span class="project-status">
+                <span class="status-dot"></span>
+                Prototype
+            </span>
+            <span class="project-status neutral">
+                <i class="fas fa-lock"></i>
+                Private repo
+            </span>
+        </div>
+
+        <p class="project-lead">
+            An LLM-powered research system that scores companies on structural themes from their
+            own disclosures — where every score is traceable to the sentence that produced it.
+        </p>
+
+        <div class="project-description">
+            <p>
+                Two of the largest risks in a modern portfolio never appear on a balance sheet:
+                how structurally exposed a company is to an economy-wide shift like AI, and whether
+                you can trust how its management talks about it. Both are sitting in plain sight in
+                earnings calls and 10-K filings. ThemeScope reads them — and shows its work,
+                sentence by sentence.
+            </p>
+        </div>
+
+        <div class="callout">
+            <i class="fas fa-flask"></i>
+            <div class="callout-body">
+                <strong>Built on the ExposureIQ research pipeline.</strong>
+                <span>
+                    ThemeScope is the conversational, auditable system that grew out of
+                    <a href="exposureiq.html">ExposureIQ</a> — the same multi-agent classifier and
+                    evaluation discipline, wrapped in a query agent you can talk to.
+                </span>
+            </div>
+        </div>
+
+        <div class="stat-tiles">
+            <div class="stat-tile">
+                <span class="stat-value">6,000</span>
+                <span class="stat-label">Firm-quarters</span>
+            </div>
+            <div class="stat-tile">
+                <span class="stat-value">183,043</span>
+                <span class="stat-label">Transcript panel</span>
+            </div>
+            <div class="stat-tile">
+                <span class="stat-value">13</span>
+                <span class="stat-label">Deterministic tools</span>
+            </div>
+            <div class="stat-tile">
+                <span class="stat-value">22</span>
+                <span class="stat-label">Design records (ADRs)</span>
+            </div>
+            <div class="stat-tile">
+                <span class="stat-value">128</span>
+                <span class="stat-label">Tests</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const saved = localStorage.getItem('theme');
+        if (saved) document.documentElement.setAttribute('data-theme', saved);
+    </script>
+</body>
+</html>

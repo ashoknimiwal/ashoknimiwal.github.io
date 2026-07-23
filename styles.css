@@ -1133,6 +1133,13 @@ footer .code-tag {
     color: var(--text-muted);
 }
 
+/* For values too long to sit at full size in a single tile */
+.project-page .stat-value.dense {
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+}
+
 .project-page .project-description {
     color: var(--text-secondary);
     font-size: 1rem;
