@@ -1425,6 +1425,88 @@ footer .code-tag {
     color: var(--accent-cyan);
 }
 
+/* Worked example — a question, the tools it called, the grounded answer */
+.project-page .worked-example {
+    margin: 1rem 0;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-card);
+}
+
+.project-page .we-question {
+    font-size: 0.98rem;
+    font-weight: 500;
+    line-height: 1.55;
+    color: var(--text-primary);
+    margin-bottom: 0.9rem;
+}
+
+.project-page .we-question i {
+    color: var(--accent-purple);
+    margin-right: 0.4rem;
+}
+
+.project-page .we-trace {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.85rem 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.project-page .we-step {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+}
+
+.project-page .we-tool {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent-cyan);
+}
+
+.project-page .we-arrow {
+    color: var(--text-muted);
+}
+
+.project-page .we-result {
+    font-size: 0.86rem;
+    color: var(--text-secondary);
+}
+
+.project-page .we-answer {
+    margin-top: 0.9rem;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--text-primary);
+}
+
+.project-page .we-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-right: 0.5rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--accent-green);
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.project-page .we-answer code {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    color: var(--accent-cyan);
+}
+
 /* Stacked notes — a short series of standalone claims */
 .project-page .note-list {
     display: flex;

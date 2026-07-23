@@ -323,6 +323,70 @@
                 </div>
             </div>
         </div>
+
+        <!-- In action -->
+        <div class="project-section">
+            <h2>In action</h2>
+            <p class="section-text">
+                Since the code is private, this is the proof — the question, the tools the agent
+                actually called, and the grounded answer it returned.
+            </p>
+
+            <div class="worked-example">
+                <div class="we-question">
+                    <i class="fas fa-comment-dots"></i>
+                    "Which industrials show declining accountability — and for the worst one, when
+                    did the slide start and what were they saying?"
+                </div>
+                <div class="we-trace">
+                    <div class="we-step">
+                        <span class="we-tool">screen</span>
+                        <span class="we-arrow">&rarr;</span>
+                        <span class="we-result">industrials trending down on accountability</span>
+                    </div>
+                    <div class="we-step">
+                        <span class="we-tool">changepoint(ARMK)</span>
+                        <span class="we-arrow">&rarr;</span>
+                        <span class="we-result">the quarter its decline begins</span>
+                    </div>
+                    <div class="we-step">
+                        <span class="we-tool">evidence_search(ARMK)</span>
+                        <span class="we-arrow">&rarr;</span>
+                        <span class="we-result">the passages from that quarter</span>
+                    </div>
+                </div>
+                <div class="we-answer">
+                    <span class="we-badge"><i class="fas fa-check"></i> grounded</span>
+                    Chained across three planning rounds — the agent picked the worst name, found
+                    when its decline began, and surfaced the exact passages behind it.
+                </div>
+            </div>
+
+            <div class="worked-example">
+                <div class="we-question">
+                    <i class="fas fa-comment-dots"></i>
+                    "What fraction of INBK's 2024 Q1 relevant segments were about accountability?"
+                </div>
+                <div class="we-trace">
+                    <div class="we-step">
+                        <span class="we-tool">firm_quarter_facts(INBK, 2024 Q1)</span>
+                        <span class="we-arrow">&rarr;</span>
+                        <span class="we-result">5 accountability of 7 relevant</span>
+                    </div>
+                    <div class="we-step">
+                        <span class="we-tool">compute(ratio, 5, 7)</span>
+                        <span class="we-arrow">&rarr;</span>
+                        <span class="we-result">0.71</span>
+                    </div>
+                </div>
+                <div class="we-answer">
+                    <span class="we-badge"><i class="fas fa-check"></i> grounded</span>
+                    0.71 — the model chose the operation; Python did the division.
+                    <code>compute</code> refuses any operand not already returned by an earlier
+                    tool, so a hallucinated number can't be laundered into the answer.
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
