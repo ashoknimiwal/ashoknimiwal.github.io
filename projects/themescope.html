@@ -426,6 +426,52 @@
                 </div>
             </div>
         </div>
+
+        <!-- Engineering decisions -->
+        <div class="project-section">
+            <h2>Engineering decisions</h2>
+            <p class="section-text">
+                With the repo private, the choices are the tell — each of these took a plainer
+                option over the obvious one, on purpose.
+            </p>
+
+            <div class="note-list">
+                <div class="note-item">
+                    <strong>ThreadPoolExecutor for the blackboard, not LangGraph.</strong>
+                    <span>
+                        The blackboard is a fixed fan-out / fan-in over four agents with no dynamic
+                        routing — a graph framework would add ceremony and no expressive power.
+                        LangGraph earns its place in the <em>query</em> agent, which genuinely
+                        branches and loops.
+                    </span>
+                </div>
+                <div class="note-item">
+                    <strong>A bounded re-planning loop, not full ReAct.</strong>
+                    <span>
+                        A single-shot planner turned layered questions into advice. The fix is an
+                        execute&#8646;replan loop, capped at 3 rounds and 12 calls with a dedup
+                        guard, plus a free heuristic router that skips re-planning entirely for
+                        simple lookups — chaining without surrendering determinism or bounded cost.
+                    </span>
+                </div>
+                <div class="note-item">
+                    <strong>Opposing agents in sequence, not parallel.</strong>
+                    <span>
+                        The Skeptic only runs on lines the Positive agent passed, and
+                        short-circuits; a free keyword prefilter runs before either. Parallel would
+                        have been simpler and roughly twice the cost for no gain.
+                    </span>
+                </div>
+                <div class="note-item">
+                    <strong>Prompts are immutable, versioned code.</strong>
+                    <span>
+                        A merged prompt is never edited — you add a version and bump a registry pin.
+                        Combined with a config hash on every score row, you can always answer
+                        <em>which exact prompt produced this number?</em>
+                    </span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
