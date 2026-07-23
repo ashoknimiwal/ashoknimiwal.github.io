@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="ThemeScope icon — a lens inspecting one bar in a score series">
+  <defs>
+    <linearGradient id="bgL" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#181A38"/>
+      <stop offset="100%" stop-color="#080C16"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bgL)"/>
+
+  <!-- the score series -->
+  <rect x="96"  y="286" width="46" height="122" rx="14" fill="#6D5AC9"/>
+  <rect x="166" y="228" width="46" height="180" rx="14" fill="#8B5CF6"/>
+  <rect x="236" y="320" width="46" height="88"  rx="14" fill="#6D5AC9"/>
+  <rect x="306" y="196" width="46" height="212" rx="14" fill="#FBBF24"/>
+
+  <!-- the lens: examine one number -->
+  <circle cx="329" cy="222" r="86" fill="none" stroke="#C4B5FD" stroke-width="20"/>
+  <line x1="390" y1="283" x2="440" y2="333" stroke="#C4B5FD" stroke-width="24" stroke-linecap="round"/>
+</svg>

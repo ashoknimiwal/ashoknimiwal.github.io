@@ -7,6 +7,13 @@
         "status": "Active research"
     },
     {
+        "title": "ThemeScope",
+        "description": "A multi-agent research system that scores S&P 1500 companies on conduct and AI exposure from earnings calls and 10-Ks — with every number traceable back to the sentence that produced it. Built on the ExposureIQ pipeline.",
+        "image": "images/projects/themescope.svg",
+        "slug": "themescope",
+        "status": "Prototype"
+    },
+    {
         "title": "Contextual Thesaurus",
         "description": "A domain-aware synonym engine powered by Word2Vec embeddings trained on financial corpora. Querying \"liquid\" returns cash, assets, solvent — not fluid, watery, wet.",
         "image": "images/projects/contextual-thesaurus.svg",
