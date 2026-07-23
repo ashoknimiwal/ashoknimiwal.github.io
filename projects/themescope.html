@@ -152,6 +152,100 @@
                 </li>
             </ol>
         </div>
+
+        <!-- How It Works -->
+        <div class="project-section">
+            <h2>How it works</h2>
+            <p class="section-text">
+                Two halves. Scoring runs offline and builds the panel once; querying runs live and
+                only ever reads it.
+            </p>
+
+            <h3 class="subsection-heading">Offline — build the panel</h3>
+            <div class="flow-chain">
+                <span class="flow-node">10-Ks / transcripts</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-node">gate</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-node">classifier</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-node">aggregator</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-node">append-only panel</span>
+            </div>
+            <p class="section-text">
+                The classifier is the <a href="exposureiq.html">ExposureIQ</a> multi-agent
+                blackboard. Its labels feed a deterministic aggregator, and every score lands in an
+                append-only panel tagged with its config hash and provenance.
+            </p>
+
+            <h3 class="subsection-heading">Online — the query agent</h3>
+            <p class="section-text">
+                An analyst asks in plain English; a bounded LangGraph state machine answers.
+            </p>
+            <div class="pipeline-steps">
+                <div class="pipeline-step">
+                    <div class="step-num">1</div>
+                    <div class="pipeline-step-inner">
+                        <strong>Plan</strong>
+                        <span>Turn the question into a sequence of tool calls.</span>
+                    </div>
+                </div>
+                <div class="pipeline-connector">|</div>
+                <div class="pipeline-step">
+                    <div class="step-num">2</div>
+                    <div class="pipeline-step-inner">
+                        <strong>Execute</strong>
+                        <span>A free heuristic router sends simple lookups straight through and
+                        multi-hop questions into a loop.</span>
+                    </div>
+                </div>
+                <div class="pipeline-connector">|</div>
+                <div class="pipeline-step">
+                    <div class="step-num">3</div>
+                    <div class="pipeline-step-inner">
+                        <strong>Re-plan</strong>
+                        <span>Execute &#8646; replan, capped at 3 rounds and 12 calls, so chaining
+                        never runs unbounded.</span>
+                    </div>
+                </div>
+                <div class="pipeline-connector">|</div>
+                <div class="pipeline-step">
+                    <div class="step-num">4</div>
+                    <div class="pipeline-step-inner">
+                        <strong>Analyst</strong>
+                        <span>Assemble the answer from what the tools actually returned.</span>
+                    </div>
+                </div>
+                <div class="pipeline-connector">|</div>
+                <div class="pipeline-step">
+                    <div class="step-num">5</div>
+                    <div class="pipeline-step-inner">
+                        <strong>Critic</strong>
+                        <span>Deterministic Python, not a prompt: every number must trace to a tool
+                        result, or the response fails.</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="subsection-heading">Auditable to the sentence</h3>
+            <p class="section-text">
+                Every number in an answer walks all the way back down:
+            </p>
+            <div class="flow-chain">
+                <span class="flow-node">score</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-node">firm-quarter</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-node">segment</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-node">speaker</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-node">quote</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-node">agent reasoning</span>
+            </div>
+        </div>
     </div>
 
     <script>
