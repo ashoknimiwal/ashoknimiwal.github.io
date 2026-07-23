@@ -1380,6 +1380,11 @@ footer .code-tag {
     color: var(--text-secondary);
 }
 
+/* Caveats, not achievements — a quieter accent for the known-gaps list */
+.project-page .note-list.muted .note-item {
+    border-left-color: var(--text-muted);
+}
+
 /* Side-by-side points — two related ideas that should be read as a pair */
 .project-page .point-grid {
     display: grid;

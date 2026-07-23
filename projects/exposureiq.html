@@ -412,6 +412,94 @@
                 tests including a pinned-baseline regression guard.
             </p>
         </div>
+
+        <!-- Engineering details -->
+        <div class="project-section">
+            <h2>Engineering details</h2>
+            <p class="section-text">
+                A few pieces that read as real work rather than a tutorial project:
+            </p>
+
+            <div class="note-list">
+                <div class="note-item">
+                    <strong>Gold fingerprinting.</strong>
+                    <span>
+                        Every evaluation stores a content hash of the gold labels. Relabel one
+                        example and the fingerprint moves, flagging every comparison against an
+                        older evaluation as not-like-for-like. It is the difference between
+                        <em>"my F1 went up"</em> and <em>"my F1 went up on a different test set"</em>,
+                        and the CI gate treats a fingerprint mismatch as a hard failure.
+                    </span>
+                </div>
+                <div class="note-item">
+                    <strong>Groundedness without ground truth.</strong>
+                    <span>
+                        Any span an agent puts in quotes must actually appear in the source
+                        segment. A note quoting text that isn't there is fabricating evidence the
+                        next stage then reasons over — so it is caught, even though there is no
+                        gold label for it. Whitespace and smart quotes are normalised so a
+                        reflowed quote isn't miscounted as a fabrication.
+                    </span>
+                </div>
+                <div class="note-item">
+                    <strong>Re-scoring is free.</strong>
+                    <span>
+                        Metrics evolve faster than runs do, so any historical run can be re-scored
+                        under a new metric without spending a token. Fresh predictions are opt-in.
+                    </span>
+                </div>
+                <div class="note-item">
+                    <strong>Metrics implemented from scratch.</strong>
+                    <span>
+                        Rather than pulled from scikit-learn — the definitions are short, the
+                        project stays dependency-light, and every averaging convention is explicit
+                        and unit-tested, so a reported F1 has exactly one meaning.
+                    </span>
+                </div>
+                <div class="note-item">
+                    <strong>Reproducibility is recorded, not assumed.</strong>
+                    <span>
+                        Every run records its prompt version and content hash, the archived prompt
+                        text, per-stage models, a config snapshot, and the git commit. A dirty git
+                        tree is recorded as dirty and the report carries a warning — a run against
+                        uncommitted code isn't reproducible and shouldn't pretend to be.
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Known gaps -->
+        <div class="project-section">
+            <h2>Known gaps</h2>
+            <p class="section-text">
+                Documented rather than buried — the open questions are part of the process, not an
+                embarrassment to hide from it:
+            </p>
+
+            <div class="note-list muted">
+                <div class="note-item">
+                    <strong>No single-agent ablation yet.</strong>
+                    <span>
+                        Whether the five-stage blackboard beats one well-prompted call is still
+                        open. The harness makes the comparison cheap; the run hasn't been done.
+                    </span>
+                </div>
+                <div class="note-item">
+                    <strong>Component gold labels are model-generated.</strong>
+                    <span>
+                        Only the relevance label is human-annotated. Component-level F1 therefore
+                        measures agreement with a reference model, not agreement with truth.
+                    </span>
+                </div>
+                <div class="note-item">
+                    <strong>Cooperation is proxied, not proven.</strong>
+                    <span>
+                        The blackboard-influence metric counts cross-component references in
+                        reasoning. Only an ablation settles whether cooperation earns its cost.
+                    </span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
