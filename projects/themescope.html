@@ -357,8 +357,10 @@
                 </div>
                 <div class="we-answer">
                     <span class="we-badge"><i class="fas fa-check"></i> grounded</span>
-                    Chained across three planning rounds — the agent picked the worst name, found
-                    when its decline began, and surfaced the exact passages behind it.
+                    Chained across three planning rounds — the agent isolated the steepest
+                    decliner, pinned the quarter the slide began, and pulled the passages behind it.
+                    Not <em>"accountability is down,"</em> but <strong>which company, since when,
+                    and in whose words.</strong>
                 </div>
             </div>
 
@@ -383,7 +385,44 @@
                     <span class="we-badge"><i class="fas fa-check"></i> grounded</span>
                     0.71 — the model chose the operation; Python did the division.
                     <code>compute</code> refuses any operand not already returned by an earlier
-                    tool, so a hallucinated number can't be laundered into the answer.
+                    tool, so no hallucinated figure can slip into a number you'd defend to an
+                    investment committee.
+                </div>
+            </div>
+
+            <div class="worked-example">
+                <div class="we-question">
+                    <i class="fas fa-comment-dots"></i>
+                    "Did NKE's integrity profile shift after its CEO change?"
+                </div>
+                <div class="we-trace">
+                    <div class="we-step">
+                        <span class="we-tool">resolve_event_date(NKE, CEO change)</span>
+                        <span class="we-arrow">&rarr;</span>
+                        <span class="we-result">2024-09-19, from two independent sources</span>
+                    </div>
+                    <div class="we-step">
+                        <span class="we-tool">event_delta(NKE, 2024-09-19)</span>
+                        <span class="we-arrow">&rarr;</span>
+                        <span class="we-result">&minus;0.033 across the window</span>
+                    </div>
+                </div>
+                <div class="we-answer">
+                    <span class="we-badge"><i class="fas fa-check"></i> grounded</span>
+                    The model resolved only the <em>date</em> from the web; the before/after delta
+                    came entirely from the precomputed panel — and the tool enforces
+                    <code>event_date &le; as_of</code>, so the study can't peek at the future.
+                </div>
+            </div>
+
+            <div class="callout">
+                <i class="fas fa-layer-group"></i>
+                <div class="callout-body">
+                    <strong>An early cut — more to come.</strong>
+                    <span>
+                        The query interface is still gaining layers and richer insight types, and
+                        ExposureIQ and ThemeScope may eventually fold into a single system.
+                    </span>
                 </div>
             </div>
         </div>
