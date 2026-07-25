@@ -138,7 +138,7 @@ function populateAbout(data) {
         });
         html += `<div class="social-links">`;
         data.links.forEach(link => {
-            html += `<a href="${link.url}" target="_blank" aria-label="${link.label}"><i class="${link.icon}"></i></a>`;
+            html += `<a href="${link.url}" target="_blank" rel="noopener noreferrer" aria-label="${link.label}"><i class="${link.icon}"></i></a>`;
         });
         html += `</div>`;
         contentContainer.innerHTML = html;
@@ -204,7 +204,7 @@ function parseLinkedContent(content) {
     return content.replace(/<([^>]+)>/g, (match, p1) => {
         const [text, url] = p1.split('|');
         if (url) {
-            return `<a href="${url}" target="_blank">${text}</a>`;
+            return `<a href="${url}" target="_blank" rel="noopener noreferrer">${text}</a>`;
         }
         return match;
     });
@@ -352,7 +352,7 @@ function createButton(type, iconClass, text, content) {
     if (type === 'abstract' || type === 'citation' || type === 'description') {
         return `<button class="btn btn-${type}"><i class="${iconClass}"></i> ${text}</button>`;
     }
-    return `<a href="${content}" class="btn btn-${type}" target="_blank"><i class="${iconClass}"></i> ${text}</a>`;
+    return `<a href="${content}" class="btn btn-${type}" target="_blank" rel="noopener noreferrer"><i class="${iconClass}"></i> ${text}</a>`;
 }
 
 // ============================================
