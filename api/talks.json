@@ -4,7 +4,7 @@
         "date": "Apr 2026",
         "event": "Financial Modeling",
         "location": "uOttawa",
-        "tag": "Forthcoming",
+        "tag": "",
         "audience": "",
         "description": "A Python-based portfolio optimization workshop simulating thousands of portfolio combinations using Monte Carlo methods to identify the efficient frontier, minimum variance portfolio, and maximum Sharpe ratio portfolio - with Security Market Line (SML) analysis and full implementation on real market data.",
         "code": "",
