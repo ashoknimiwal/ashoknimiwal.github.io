@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Apply saved theme before first paint to avoid a flash of the wrong theme
+        (function () {
+            var t = localStorage.getItem('theme');
+            if (t) document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
     <title>ExposureIQ — Emerging-Risk Signals from Earnings Calls</title>
     <meta name="description" content="A multi-agent LLM pipeline that scores 106,000+ earnings-call segments for corporate-integrity risk exposure, with a research-grade evaluation harness that attributes every error to the agent that caused it.">
     <link rel="canonical" href="https://ashoknimiwal.github.io/projects/exposureiq.html">
@@ -561,10 +568,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        const saved = localStorage.getItem('theme');
-        if (saved) document.documentElement.setAttribute('data-theme', saved);
-    </script>
 </body>
 </html>

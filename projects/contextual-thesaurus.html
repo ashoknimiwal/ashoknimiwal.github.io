@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Apply saved theme before first paint to avoid a flash of the wrong theme
+        (function () {
+            var t = localStorage.getItem('theme');
+            if (t) document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
     <title>Contextual Thesaurus — Ashok Kumar</title>
     <meta name="description" content="A domain-aware synonym engine built on custom Word2Vec embeddings — it learns how language is actually used within a specific domain instead of returning generic dictionary synonyms.">
     <link rel="canonical" href="https://ashoknimiwal.github.io/projects/contextual-thesaurus.html">
@@ -237,10 +244,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        const saved = localStorage.getItem('theme');
-        if (saved) document.documentElement.setAttribute('data-theme', saved);
-    </script>
 </body>
 </html>
