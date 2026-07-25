@@ -89,19 +89,38 @@ function updateThemeIcon() {
 // ============================================
 
 async function loadAllSections() {
-    try {
-        const aboutResponse = await fetch('api/about.json');
-        const aboutData = await aboutResponse.json();
-        populateAbout(aboutData);
+    const sections = ['about', 'news', 'publications', 'talks', 'projects', 'blogPosts', 'miscellaneous'];
 
-        const sections = ['news', 'publications', 'talks', 'projects', 'blogPosts', 'miscellaneous'];
-        for (const section of sections) {
-            const response = await fetch(`api/${section}.json`);
-            const data = await response.json();
+    // Fetch every section concurrently; one failure must not sink the others.
+    const results = await Promise.all(sections.map(loadSection));
+
+    results.forEach(({ section, data, error }) => {
+        if (error) {
+            console.error(`Error loading ${section}:`, error);
+            showSectionError(section);
+        } else if (section === 'about') {
+            populateAbout(data);
+        } else {
             populateSection(section, data);
         }
+    });
+}
+
+async function loadSection(section) {
+    try {
+        const response = await fetch(`api/${section}.json`);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return { section, data: await response.json() };
     } catch (error) {
-        console.error('Error loading data:', error);
+        return { section, error };
+    }
+}
+
+function showSectionError(section) {
+    const containerId = section === 'about' ? 'about-content' : `${section}-container`;
+    const container = document.getElementById(containerId);
+    if (container) {
+        container.innerHTML = '<p class="section-error">This section couldn\'t be loaded. Please try refreshing the page.</p>';
     }
 }
 

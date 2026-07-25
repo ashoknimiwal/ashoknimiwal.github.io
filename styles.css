@@ -237,6 +237,12 @@ section h2 {
     letter-spacing: -0.01em;
 }
 
+/* Fallback message shown when a section's data fails to load */
+.section-error {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
 /* --- About Me Section --- */
 #about {
     display: flex;
