@@ -366,27 +366,30 @@ section h2 {
     list-style-type: none;
     padding: 0;
     margin: 0;
-}
-
-#news li {
-    display: flex;
+    /* Shared grid so the date, bullet, and text align into columns across every row */
+    display: grid;
+    grid-template-columns: max-content max-content 1fr;
+    column-gap: 0.4rem;
+    row-gap: 0.65rem;
     align-items: baseline;
-    gap: 0.35rem;
-    margin-bottom: 0.65rem;
     line-height: 1.5;
     color: var(--text-secondary);
     font-size: 0.92rem;
 }
 
+#news li {
+    /* Dissolve the li box so its date/bullet/text join the ul's shared grid */
+    display: contents;
+}
+
 .news-date {
-    flex-shrink: 0;
+    /* Right-align within the fixed date column so every date's right edge
+       meets the bullet at the same distance — bullet stays equidistant and
+       column-aligned at once */
+    justify-self: end;
     color: var(--text-primary);
     font-weight: 600;
     white-space: nowrap;
-}
-
-.news-text {
-    flex: 1;
 }
 
 #news li a {
